@@ -69,16 +69,19 @@ function universitySearchResults($data) {
       ));
     }
   }
+  $programsMetaQuery = array('relation' => 'OR');
+
+  foreach ($mainResults['programs'] as $item) {
+    array_push($programsMetaQuery, array(
+      // name of the advanced custom field we want to look within
+      'key' => 'related_programs',
+      'compare' => 'LIKE',
+      'value' => '"' . $item['id'] . '"'
+    ));
+  }
   $programRelationshipsQuery = new WP_Query(array(
     'post_type' => 'professor',
-    'meta_query' => array(
-      array(
-        // name of the advanced custom field we want to look within
-        'key' => 'related_programs',
-        'compare' => 'LIKE',
-        'value' => '"' . $mainResults['programs'][0]['id'] . '"'
-      )
-    )
+    'meta_query' => $programsMetaQuery
   ));
   while($programRelationshipsQuery->have_posts()) {
     $programRelationshipsQuery->the_post();

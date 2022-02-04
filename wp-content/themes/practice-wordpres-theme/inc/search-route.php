@@ -71,10 +71,12 @@ function universitySearchResults($data) {
   $programRelationshipsQuery = new WP_Query(array(
     'post_type' => 'professor',
     'meta_query' => array(
-      // name of the advanced custom field we want to look within
-      'key' => 'related_programs',
-      'compare' => 'LIKE',
-      'value' => '"105"'
+      array(
+        // name of the advanced custom field we want to look within
+        'key' => 'related_programs',
+        'compare' => 'LIKE',
+        'value' => '"105"'
+      )
     )
   ));
   while($programRelationshipsQuery->have_posts()) {

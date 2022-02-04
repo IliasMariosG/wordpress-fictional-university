@@ -42,7 +42,8 @@ function universitySearchResults($data) {
     if (get_post_type() == 'program') { 
       array_push($mainResults['programs'], array(
         'title' => get_the_title(),
-        'permalink' => get_the_permalink()
+        'permalink' => get_the_permalink(),
+        'id' => get_the_ID()
       ));
     }
     if (get_post_type() == 'event') {
@@ -75,7 +76,7 @@ function universitySearchResults($data) {
         // name of the advanced custom field we want to look within
         'key' => 'related_programs',
         'compare' => 'LIKE',
-        'value' => '"105"'
+        'value' => '"' . $mainResults['programs'][0]['id'] . '"'
       )
     )
   ));

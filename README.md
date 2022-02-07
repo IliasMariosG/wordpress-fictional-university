@@ -2633,3 +2633,27 @@ array_push($mainResults['campuses'], array(
   'permalink' => get_the_permalink($campus),
 ));
 ```
+
+### Search Feature without jQuery
+
+#### Differences
+
+Select an element
+
+- jQuery
+
+  `$("#css-like-selector")`
+
+- JS
+
+  `document.querySelector(css-like-selector)` (selects the first instance of the selector)
+
+Select all elements that matter
+
+- jQuery
+
+  `$(".element")`
+
+- JS
+
+`document.querySelectorAll(".selector")` (returns an array or a node lisr of alla elements that match the selector selectors)

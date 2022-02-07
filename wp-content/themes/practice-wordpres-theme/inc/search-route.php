@@ -40,6 +40,15 @@ function universitySearchResults($data) {
       ));
     }
     if (get_post_type() == 'program') { 
+      $relatedCampuses = get_field('related_campus');
+      if ($relatedCampuses) {
+        foreach($relatedCampuses as $campus) {
+          array_push($mainResults['campuses'], array(
+            'title' => get_the_title($campus),
+            'permalink' => get_the_permalink($campus),
+          ));
+        }
+      }
       array_push($mainResults['programs'], array(
         'title' => get_the_title(),
         'permalink' => get_the_permalink(),

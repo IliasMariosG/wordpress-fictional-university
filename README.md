@@ -2618,3 +2618,18 @@ $programRelationshipsQuery = new WP_Query(array(
 ### Search Logic that's Aware of Relationships (Part 2)
 
 #### Edit professor and program relationship query and make it dynamic
+
+TODO
+
+### Completing our Search Overlay
+
+Campuses are a bit different to professors and events (the direction of the relationship). On the admin page -> Campuses -> select any campus, we can see that it doesn't contain a field where you can relate it to a program. Instead, each program post gets related to a campus. We've set the math program to be related to the Downtown West campus
+
+We want the title and permalink for the related campus, not the program. Thus, in `search-route.js`::
+
+```php
+array_push($mainResults['campuses'], array(
+  'title' => get_the_title($campus),
+  'permalink' => get_the_permalink($campus),
+));
+```

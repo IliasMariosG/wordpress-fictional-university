@@ -129,6 +129,7 @@ class Search {
     }
   }
 
+  // this method gets called when you click on search icon on the top right
   openOverlay() {
     this.searchOverlay.classList.add("search-overlay--active")
     document.body.classList.add("body-no-scroll")
@@ -136,6 +137,7 @@ class Search {
     setTimeout(() => this.searchField.focus(), 301)
     console.log("our open method just ran!")
     this.isOverlayOpen = true
+    // prevents the default behavior of "a" or "link" elements
     return false
   }
 

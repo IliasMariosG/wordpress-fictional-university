@@ -2657,3 +2657,38 @@ Select all elements that matter
 - JS
 
 `document.querySelectorAll(".selector")` (returns an array or a node lisr of alla elements that match the selector selectors)
+
+## Non-JS Fallback Traditional Search
+
+### Traditional WordPress Searching
+
+In the address bar, type:
+
+`http://practice-wordpress.local/?s=biology`
+
+The search result screen is being powered by index.php of our theme folder
+
+We can't expect visitors to know how to type the above in the address bar. For this reason, we'll create a new page and a new form in that page for visitors to type whatever they need to search for
+
+ `http://practice-wordpress.local/search/` currently powerd by page.php
+
+ We'll create a new theme file, `page-search.php`, only for `/search`
+
+ then, we'll modify the `page.php` content, after we copy and paste everything to `page-search.php`
+
+ Now this search form page doesn't need to have any actual WordPress body content, so why don't we delete this
+
+`<?php echo site_url('/'); ?>`
+
+This will generate the home page you url for our WordPress installation
+
+`<?php echo esc_url(site_url('/')); ?>`
+
+  At this point, we've told the form to add `s=asdssd` onto the root of the url instead.
+
+  Also, method="GET". If we set this to post, then whatever the visitor types into our field would not get added at the end of the url
+
+Now, navigation:
+
+  let's adjust this top right search icon so that if JavaScript is disabled, it takes you to `/search`
+  

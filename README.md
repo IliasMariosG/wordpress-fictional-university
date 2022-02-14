@@ -2660,7 +2660,7 @@ Select all elements that matter
 
 ## Non-JS Fallback Traditional Search
 
-### Traditional WordPress Searching
+### Traditional WordPress Searching (Part 1)
 
 In the address bar, type:
 
@@ -2692,3 +2692,12 @@ Now, navigation:
 
   let's adjust this top right search icon so that if JavaScript is disabled, it takes you to `/search`
   
+  TODO
+
+### Traditional WordPress Searching (Part 2)
+
+Goal: Format search results
+
+The search results results screen is powered by `index.php`. Create a `search.php` file, copy from `index.php` and paste to `search.php`
+
+TODO

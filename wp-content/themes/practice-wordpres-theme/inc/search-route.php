@@ -41,6 +41,7 @@ function universitySearchResults($data) {
     }
     if (get_post_type() == 'program') { 
       $relatedCampuses = get_field('related_campus');
+
       if ($relatedCampuses) {
         foreach($relatedCampuses as $campus) {
           array_push($mainResults['campuses'], array(
@@ -82,48 +83,48 @@ function universitySearchResults($data) {
   if ($mainResults['programs']) {
     $programsMetaQuery = array('relation' => 'OR');
 
-  foreach ($mainResults['programs'] as $item) {
-    array_push($programsMetaQuery, array(
-      // name of the advanced custom field we want to look within
-      'key' => 'related_programs',
-      'compare' => 'LIKE',
-      'value' => '"' . $item['id'] . '"'
-    ));
-  }
-  $programRelationshipsQuery = new WP_Query(array(
-    'post_type' => array('professor', 'event'),
-    'meta_query' => $programsMetaQuery
-  ));
-  while($programRelationshipsQuery->have_posts()) {
-    $programRelationshipsQuery->the_post();
-    if (get_post_type() == 'event') {
-      $eventDate = new DateTime(get_field('event_date'));
-      $description = null;
-      if (has_excerpt()) {
-        $description = get_the_excerpt();
-      } else {
-        $description = wp_trim_words(get_the_content(), 18);
-      }
-      array_push($mainResults['events'], array(
-        'title' => get_the_title(),
-        'permalink' => get_the_permalink(),
-        'month' => $eventDate->format('M'),
-        'day' => $eventDate->format('d'),
-        'description' => $description
+    foreach ($mainResults['programs'] as $item) {
+      array_push($programsMetaQuery, array(
+        // name of the advanced custom field we want to look within
+        'key' => 'related_programs',
+        'compare' => 'LIKE',
+        'value' => '"' . $item['id'] . '"'
       ));
     }
-    if (get_post_type() == 'professor') { 
-      array_push($mainResults['professors'], array(
-        'title' => get_the_title(),
-        'permalink' => get_the_permalink(),
-        // first argument value (0): current post
-        'image' => get_the_post_thumbnail_url(0, 'professorLandscape')
-      ));
-    };
-  }
-  // remove duplicates
-  $mainResults['professors'] = array_unique($mainResults['professors'], SORT_REGULAR);
-  $mainResults['events'] = array_unique($mainResults['events'], SORT_REGULAR);
+    $programRelationshipsQuery = new WP_Query(array(
+      'post_type' => array('professor', 'event'),
+      'meta_query' => $programsMetaQuery
+    ));
+    while($programRelationshipsQuery->have_posts()) {
+      $programRelationshipsQuery->the_post();
+      if (get_post_type() == 'event') {
+        $eventDate = new DateTime(get_field('event_date'));
+        $description = null;
+        if (has_excerpt()) {
+          $description = get_the_excerpt();
+        } else {
+          $description = wp_trim_words(get_the_content(), 18);
+        }
+        array_push($mainResults['events'], array(
+          'title' => get_the_title(),
+          'permalink' => get_the_permalink(),
+          'month' => $eventDate->format('M'),
+          'day' => $eventDate->format('d'),
+          'description' => $description
+        ));
+      }
+      if (get_post_type() == 'professor') { 
+        array_push($mainResults['professors'], array(
+          'title' => get_the_title(),
+          'permalink' => get_the_permalink(),
+          // first argument value (0): current post
+          'image' => get_the_post_thumbnail_url(0, 'professorLandscape')
+        ));
+      };
+    }
+    // remove duplicates
+    $mainResults['professors'] = array_unique($mainResults['professors'], SORT_REGULAR);
+    $mainResults['events'] = array_unique($mainResults['events'], SORT_REGULAR);
   }
   
   return $mainResults;

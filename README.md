@@ -2701,3 +2701,43 @@ Goal: Format search results
 The search results results screen is powered by `index.php`. Create a `search.php` file, copy from `index.php` and paste to `search.php`
 
 TODO
+
+## User Roles and Permisions
+
+### User Roles & Permisions
+
+#### Create a customer user role that can only manage the event post type
+
+- In the admin, search for, install and activate Member - Membership & User Role Editor Plugin
+
+- Members menu in the left-hand side bar: Members > Roles -> Add New -> "Event Planner"
+
+- `mu-plugins/univerity-post-types.php`, inside the event post type add:
+
+  ```php
+    // creates new unique capabilities for event
+    'capability_type' => 'event',
+    // enforce and require these permissions
+    'map_meta_cap' => true,
+  ```
+
+- Then, refresh admin and actually add the new role. Also, grant permsissions to the newly creatd "Events"
+
+- Admin again, Users > Edit User coworkerone > Roles > deselect Editor and Select Event Planner
+
+- Back in the private window, if I refresh the page, I can only see Events
+
+- Normal admin, Members > Roles > Administrator > Events to grant event permissions to the administrator too!
+
+#### Multiple Roles for the Same User
+
+- `mu-plugins/univerity-post-types.php`, inside the event post type add:
+
+  ```php
+    // creates new unique capabilities for event
+    'capability_type' => 'campus',
+    // enforce and require these permissions
+    'map_meta_cap' => true,
+  ```
+
+- Members menu in the left-hand side bar: Members > Roles -> Add New -> "Campus Manager"

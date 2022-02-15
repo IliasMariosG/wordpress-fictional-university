@@ -2847,11 +2847,24 @@ In `header` file, update the second `href` value after the `else`
 
 ### "My Notes" Feature
 
+#### Create an orange My Notes button
+
 Add a new page "My Notes"
 
 Create a unique page template, currently powered by `page.php`
 
 Name the new file `page-my-notes.php`
+
+#### Direct user manually entering the `/my-notes` url when they are not logged in to the homepage
+
+in `page-my-notes`:
+
+```php
+if (!is_user_logged_in()) {
+    wp_redirect(esc_url(site_url('/')));
+    exit;
+  }
+```
 
 ### "My Notes" Front-end Part 1
 

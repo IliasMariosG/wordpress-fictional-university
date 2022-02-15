@@ -2842,3 +2842,33 @@ In `header` file, update the second `href` value after the `else`
     return get_bloginfo('name');
   }
   ```
+
+## User Generated Content
+
+### "My Notes" Feature
+
+Add a new page "My Notes"
+
+Create a unique page template, currently powered by `page.php`
+
+Name the new file `page-my-notes.php`
+
+### "My Notes" Front-end Part 1
+
+### "My Notes" Front-end Part 2
+
+### Delete Posts with the REST API
+
+### Edit/Update Posts with the REST API
+
+### Creating New Notes
+
+### Creating New Notes (Part 2)
+
+### Note Permission and Security (Part 1)
+
+### Note Permission and Security (Part 2)
+
+### Per-User Post Limit
+
+### jQuery Free MY Notes

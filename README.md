@@ -2704,6 +2704,12 @@ TODO
 
 ## User Roles and Permisions
 
+Goals
+
+- Permissions
+- Security
+- CRUD user-specific content
+
 ### User Roles & Permisions
 
 #### Create a customer user role that can only manage the event post type
@@ -2741,3 +2747,20 @@ TODO
   ```
 
 - Members menu in the left-hand side bar: Members > Roles -> Add New -> "Campus Manager"
+
+- Back in the private window, if I refresh the page, I can only see Campuses and Events
+
+- Normal admin, Members > Roles > Administrator > Campuses to grant event permissions to the administrator too!
+
+### Open Registration
+
+#### Sign up to the site
+
+A new account will be assigned to "Subscriber" role
+
+- Admin panel > Settings > General > Membership: Enable "Anyone can register" (User Default Role: "Subscriber")
+
+#### When a user is logged in
+
+- A logout button is shown
+- A gravatar is shown

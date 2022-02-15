@@ -2764,3 +2764,23 @@ A new account will be assigned to "Subscriber" role
 
 - A logout button is shown
 - A gravatar is shown
+
+#### Subcriber is directed to the front end page
+
+Right now they are directed to their dashboard
+
+- `functions.php`:
+
+  ```php
+  add_action('admin_init', 'redirectSubsToFrontend');
+
+  function redirectSubsToFrontend() {
+    $ourCurrentUser = wp_get_current_user();
+
+    if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 
+    'subscriber') {
+      wp_redirect(site_url('/'));
+      exit;
+    }
+  }
+  ```

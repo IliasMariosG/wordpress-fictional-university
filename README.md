@@ -2803,3 +2803,42 @@ In `header` file, update the second `href` value after the `else`
 `themes/practice-wordpres-theme/header.php`
 
 #### Customize the WordPress login screen so that it's not branded with the big WordPress logo
+
+- The logo - header url -, once clicked, directs to the official WordPress page
+
+  In `functions`:
+
+  ```php
+  // Customise Login screen
+  add_filter('login_headerurl', 'ourHeaderUrl');
+
+  function ourHeaderUrl() {
+    return esc_url(site_url('/'));
+  }
+  ```
+
+- Update styling:
+
+  In `functions`, all we have to do is apply css:
+
+  ```php
+
+  function ourLoginCSS() {
+    wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+    wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('university_main_styles', get_theme_file_uri('/build/style-index.css'));
+    wp_enqueue_style('university_extra_styles', get_theme_file_uri('/build/index.css'));
+  }
+  ```
+
+- Change header title "Powered by WordPress" to th name of the site:
+
+  In `functions`:
+
+  ```php
+  add_filter('login_headertitle', 'ourLoginTitle');
+
+  function ourLoginTitle() {
+    return get_bloginfo('name');
+  }
+  ```

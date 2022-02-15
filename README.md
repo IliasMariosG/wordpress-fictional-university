@@ -2793,8 +2793,13 @@ Work in `functions`
 
 #### Make Login button working
 
-in `header` file, update the `href` value after the `else`:
+In `header` file, update the `href` value after the `else`:
 
 - `echo wp_login_url()`
+
+#### Get Sign Up button working
+
+In `header` file, update the second `href` value after the `else`
+`themes/practice-wordpres-theme/header.php`
 
 #### Customize the WordPress login screen so that it's not branded with the big WordPress logo

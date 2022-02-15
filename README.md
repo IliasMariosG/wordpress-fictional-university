@@ -2788,3 +2788,13 @@ Right now they are directed to their dashboard
 #### Hide top admin bar for subscribers
 
 Work in `functions`
+
+### Open Registration (Part 2)
+
+#### Make Login button working
+
+in `header` file, update the `href` value after the `else`:
+
+- `echo wp_login_url()`
+
+#### Customize the WordPress login screen so that it's not branded with the big WordPress logo

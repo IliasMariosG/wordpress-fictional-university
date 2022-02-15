@@ -107,6 +107,7 @@
 
   add_filter('acf/fields/google_map/api', 'universityMapKey');
 
+  // Redirect subscriber uers to the homepage
   add_action('admin_init', 'redirectSubsToFrontend');
 
   function redirectSubsToFrontend() {
@@ -116,6 +117,18 @@
     'subscriber') {
       wp_redirect(site_url('/'));
       exit;
+    }
+  }
+
+  // Hide top admin bar for subscribers
+  add_action('wp_loaded', 'noSubsAdminBar');
+
+  function noSubsAdminBar() {
+    $ourCurrentUser = wp_get_current_user();
+
+    if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 
+    'subscriber') {
+      show_admin_bar(false);
     }
   }
 ?>

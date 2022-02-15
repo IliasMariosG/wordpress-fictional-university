@@ -2784,3 +2784,7 @@ Right now they are directed to their dashboard
     }
   }
   ```
+
+#### Hide top admin bar for subscribers
+
+Work in `functions`

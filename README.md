@@ -2889,6 +2889,41 @@ register_post_type('note', array(
 ));
 ```
 
+#### Create two new notes from the admin back end
+
+title 1: Biology Lecture #4
+
+content 1: Today I watched biology and learnt a lot..
+
+title 2: Math Lecture #1
+
+content 2: Math class was great today. I learnt blah blah
+
+`page-my-notes.php`:
+
+```php
+<div class="container container--narrow page-section">
+  <ul class="min-list link-list" id="my-notes">
+    <?php
+      $userNotes = new WP_Query(array(
+        'post_type' => 'note',
+        'posts_per_page' => -1,
+        'author' => get_current_user_id()
+      ));
+
+      while ($userNotes->have_posts()) {
+        $userNotes->the_post(); ?>
+        <li>
+          <input class="note-title-field" value="<?php echo esc_attr(get_the_title()); ?>" type="text">
+          <textarea class="note-body-field"><?php echo esc_attr(wp_strip_all_tags(get_the_content())); ?></textarea>
+        </li>
+      <?php
+      }
+    ?>
+  </ul>
+</div>
+```
+
 ### "My Notes" Front-end Part 1
 
 ### "My Notes" Front-end Part 2

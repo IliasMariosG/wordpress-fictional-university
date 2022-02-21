@@ -15,6 +15,7 @@ class MyNotes {
     var thisNote = $(e.target).parents("li");
     // Remove readonly attributes from the relevant fields
     thisNote.find(".note-title-field, .note-body-field").removeAttr("readonly").addClass("note-active-field");
+    thisNote.find(".update-note").addClass("update-note--visible");
   }
   deleteNote(e) {
     var thisNote = $(e.target).parents("li");

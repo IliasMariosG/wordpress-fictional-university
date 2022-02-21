@@ -2924,6 +2924,10 @@ content 2: Math class was great today. I learnt blah blah
 </div>
 ```
 
+#### Create 'Edit' and 'Delete' buttons
+
+The two `span` elements in `page-my-notes.php`
+
 ### "My Notes" Front-end Part 1
 
 ### "My Notes" Front-end Part 2

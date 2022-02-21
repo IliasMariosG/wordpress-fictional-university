@@ -2930,6 +2930,8 @@ The two `span` elements in `page-my-notes.php`
 
 ### "My Notes" Front-end Part 1
 
+Goal: Edit and delete posts (notes) right from the front end of our website
+
 ### "My Notes" Front-end Part 2
 
 ### Delete Posts with the REST API

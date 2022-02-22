@@ -2980,6 +2980,8 @@ export default MyNotes;
 
 ### Edit/Update Posts with the REST API
 
+Feature: Once you click the edit button, then it turns into a cancel button. If you click the cancel button, then that would remove the animated border and also make it so these fields are read only once again
+
 ### Creating New Notes
 
 ### Creating New Notes (Part 2)

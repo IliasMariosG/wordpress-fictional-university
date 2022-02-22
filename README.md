@@ -2986,6 +2986,10 @@ Feature: When you click the blue Save button it sends off a request to the WP RE
 
 ### Creating New Notes
 
+Feature: Create brand new posts by using the rest API. Add a form that users can fill out to create a brand new note post
+
+The default post status when you create a post through the REST API is "draft". We can change the status from the admin dashboard and manually adjust that. But we can also do it programmatically.
+
 ### Creating New Notes (Part 2)
 
 ### Note Permission and Security (Part 1)

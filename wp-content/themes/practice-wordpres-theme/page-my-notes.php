@@ -13,6 +13,12 @@
     ?>
 
     <div class="container container--narrow page-section">
+      <article class="create-note">
+        <h2 class="headline headline--medium">Create New Note</h2>
+        <input class="new-note-title" type="text" placeholder="Title">
+        <textarea class="new-note-body" placeholder="Your note here..."></textarea>
+        <button class="submit-note" type="submit">Create Note</button>
+      </article>
       <ul class="min-list link-list" id="my-notes">
         <?php
           $userNotes = new WP_Query(array(

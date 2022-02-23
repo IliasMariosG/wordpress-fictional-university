@@ -79,8 +79,10 @@ function university_post_types() {
     'menu_icon' => 'dashicons-welcome-learn-more'
   ));
 
-   // Note Post Type
-   register_post_type('note', array(
+  // Note Post Type
+  register_post_type('note', array(
+    'capability_type' => 'note',
+    'map_meta_cap' => true,
     'supports' => array('title', 'editor'),
     // notes are visible only to the user
     'public' => false,

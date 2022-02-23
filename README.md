@@ -2994,6 +2994,14 @@ The default post status when you create a post through the REST API is "draft". 
 
 ### Note Permission and Security (Part 1)
 
+Give basic subscriber role users permission to create and manage their own notes
+
+Steps:
+
+`university-post-types`, edit Note post type
+
+Admin dashboard, grant permissions for 'Notes' to admin and subscriber
+
 ### Note Permission and Security (Part 2)
 
 ### Per-User Post Limit

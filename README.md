@@ -3020,6 +3020,14 @@ In `functions` file we create a `makeNotePrivate()` function to force note posts
 
 ### Note Permission and Security (Part 2)
 
+Admin dashboard -> Roles -> Subscriber -> Edit -> Notes -> Remove grant for delete_published_notes and edit_published_notes. Then update. Explanation: Now that we've set things up so that note posts will always be private, that means they will never actually be considered published
+
+About Unfiltered HTML
+
+By default, if you check the roles -> General in the admin dashboard the "Unfiltered HTML" is unchecked for every user role but the admin one.
+
+Even though subscribers are not allowed to post unfiltered HTML by default, they are allowed to post basic HTML. We overcome this with the use of `sanitize_text_field` and `sanitize_textarea_field`
+
 ### Per-User Post Limit
 
 ### jQuery Free MY Notes

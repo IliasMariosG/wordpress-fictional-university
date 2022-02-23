@@ -2994,13 +2994,29 @@ The default post status when you create a post through the REST API is "draft". 
 
 ### Note Permission and Security (Part 1)
 
-Give basic subscriber role users permission to create and manage their own notes
+Feature: Give basic subscriber role users permission to create and manage their own notes
 
 Steps:
 
 `university-post-types`, edit Note post type
 
 Admin dashboard, grant permissions for 'Notes' to admin and subscriber
+
+Feature: Privacy. Only the creator or the author of note should be able to view it
+
+##### Manually
+
+Right now anyone can visit the url `http://practice-wordpress.local/wp-json/wp/v2/note/` and see newly created notes
+
+We will leverage a WP native feature of private content:
+
+Visit the admin dashboard -> Notes -> click the newly created note -> Status & Visibility -> Visibility -> Change to "Private"
+
+- To do the same for all Notes: table nav (Bulk Actions, Edit, Move to Trash) -> Select Edit -> Apply -> in the box that shows up -> change status to "Private"
+
+#### Programmatically
+
+In `functions` file we create a `makeNotePrivate()` function to force note posts to be private on the server side, despite them having a `status` of `publish` in `MyNotes.js`, that is on the client side).
 
 ### Note Permission and Security (Part 2)
 

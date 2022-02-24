@@ -157,6 +157,7 @@
   }
 
   // Force note posts to be private
+  // Intercept requests right before data gets saved into the WordPress database
   add_filter('wp_insert_post_data', 'makeNotePrivate');
 
   function makeNotePrivate($data) {

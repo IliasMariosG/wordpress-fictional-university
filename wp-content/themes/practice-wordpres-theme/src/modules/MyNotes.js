@@ -52,7 +52,10 @@ class MyNotes {
       type: 'DELETE',
       success: (response) => {
         console.log('Success');
-        console.log(response)
+        console.log(response);
+        if (response.userNoteCount < 5) {
+          $(".note-limit-message").removeClass("active");
+        }
       },
       error: (response) => {
         console.log('Sorry');

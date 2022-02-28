@@ -3031,3 +3031,38 @@ Even though subscribers are not allowed to post unfiltered HTML by default, they
 ### Per-User Post Limit
 
 ### jQuery Free MY Notes
+
+
+
+## Like or "Heart" Count for Professors
+
+### Let Users "Like" or "Heart" a Professor
+
+Add a little box with a heart icon and then a number indicating how many likes a professor has received
+
+Set things up so that you need to be logged in with a subscriber count in order to add your like to the count
+
+Implement custom logic so that each user account can only add one like, but they can click the heart button again to toggle or remove their original like
+
+This feature it's a great exercise to learn how to set up your own custom rest API endpoints
+
+- Visual aspect in `single-profesor` file:
+
+```html
+<aside class="two-thirds">
+  <span class="like-box">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <span class="like-count">3</span>
+  </span>
+  <?php the_content(); ?>
+</aside>
+```
+
+- Data aspect: Create a new custom post type
+
+  Author of a like post will be the user doing the liking
+
+  First, we'll work in the back-end
+  
+  An ACField needed - Liked Professor ID

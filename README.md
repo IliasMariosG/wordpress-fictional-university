@@ -3036,7 +3036,7 @@ Even though subscribers are not allowed to post unfiltered HTML by default, they
 
 ## Like or "Heart" Count for Professors
 
-### Let Users "Like" or "Heart" a Professor
+### Let Users "Like" or "Heart" a Professor (Part 1)
 
 Add a little box with a heart icon and then a number indicating how many likes a professor has received
 
@@ -3064,5 +3064,13 @@ This feature it's a great exercise to learn how to set up your own custom rest A
   Author of a like post will be the user doing the liking
 
   First, we'll work in the back-end
-  
+
   An ACField needed - Liked Professor ID
+
+### Let Users "Like" or "Heart" a Professor (Part 2)
+
+Set up custom rest API endpoints for our two like actions
+
+### Creating custom POST and DELETE endpoints
+
+TODO

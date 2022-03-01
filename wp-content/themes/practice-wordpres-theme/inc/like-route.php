@@ -49,6 +49,12 @@
     }
   }
 
-  function deleteLike() {
-    return 'Thanks for trying to delete a like.';
+  function deleteLike($data) {
+    $likeID = sanitize_text_field($data['like']);
+    if (get_current_user_id() == get_post_field('post_author', $likeID)) {
+      wp_delete_post($likeID, true);
+      return 'Congrats, like deleted.';
+    } else {
+      die('You do not have permission to delete that.');
+    }
   }

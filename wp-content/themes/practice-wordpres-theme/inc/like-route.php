@@ -19,14 +19,14 @@
     if (is_user_logged_in()) {
       $professorID = sanitize_text_field($data['professorId']);
 
-    return wp_insert_post(array(
-      'post_type' => 'like',
-      'post_status' => 'publish',
-      'post_title' => '2nd PHP Test',
-      'meta_input' => array(
-        'liked_professor_id' => $professorID
-      )
-    ));
+      return wp_insert_post(array(
+        'post_type' => 'like',
+        'post_status' => 'publish',
+        'post_title' => '2nd PHP Test',
+        'meta_input' => array(
+          'liked_professor_id' => $professorID
+        )
+      ));
     } else {
       die('Only logeed in users can create a like.');
     }

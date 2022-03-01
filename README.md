@@ -3032,7 +3032,7 @@ Even though subscribers are not allowed to post unfiltered HTML by default, they
 
 ### jQuery Free MY Notes
 
-
+TODO
 
 ## Like or "Heart" Count for Professors
 
@@ -3072,5 +3072,9 @@ This feature it's a great exercise to learn how to set up your own custom rest A
 Set up custom rest API endpoints for our two like actions
 
 ### Creating custom POST and DELETE endpoints
+
+TODO
+
+### Programmatically Create a Post
 
 TODO

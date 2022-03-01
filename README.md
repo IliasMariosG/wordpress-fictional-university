@@ -3088,3 +3088,9 @@ TODO
 Feature: Only logged in users can create a like
 
 Feature: One like per professor
+
+### Completing the Likebox
+
+Feature: Update JavaScript so that when you do successfully add a like post, the likebox count and heart update in real time on the fly so that you don't need to manually refresh the page.
+
+Feature: If you click the box again, we will set up the server side to delete or remove a like

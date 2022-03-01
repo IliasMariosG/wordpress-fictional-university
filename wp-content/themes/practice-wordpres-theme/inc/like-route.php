@@ -51,7 +51,7 @@
 
   function deleteLike($data) {
     $likeID = sanitize_text_field($data['like']);
-    if (get_current_user_id() == get_post_field('post_author', $likeID)) {
+    if (get_current_user_id() == get_post_field('post_author', $likeID) AND get_post_type($likeID) == 'like') {
       wp_delete_post($likeID, true);
       return 'Congrats, like deleted.';
     } else {

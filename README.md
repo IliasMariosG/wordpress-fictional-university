@@ -3086,3 +3086,5 @@ TODO
 ### Completing the LikeBox
 
 Feature: Only logged in users can create a like
+
+Feature: One like per professor

@@ -3078,3 +3078,11 @@ TODO
 ### Programmatically Create a Post
 
 TODO
+
+### Enforce Limit of One Like Per User/Teacher Combo
+
+**Goal**: Set things up so that you need to be logged in with a user account in order to create a like. We also need to set up the logic so that each user account can only create one like per professor
+
+### Completing the LikeBox
+
+Feature: Only logged in users can create a like

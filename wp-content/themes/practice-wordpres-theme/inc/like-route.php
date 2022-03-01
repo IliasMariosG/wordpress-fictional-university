@@ -16,9 +16,10 @@
   }
 
   function createLike($data) {
-    $professorID = sanitize_text_field($data['professorId']);
+    if (is_user_logged_in()) {
+      $professorID = sanitize_text_field($data['professorId']);
 
-    wp_insert_post(array(
+    return wp_insert_post(array(
       'post_type' => 'like',
       'post_status' => 'publish',
       'post_title' => '2nd PHP Test',
@@ -26,6 +27,9 @@
         'liked_professor_id' => $professorID
       )
     ));
+    } else {
+      die('Only logeed in users can create a like.');
+    }
   }
 
   function deleteLike() {

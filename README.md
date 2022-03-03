@@ -3031,3 +3031,75 @@ Even though subscribers are not allowed to post unfiltered HTML by default, they
 ### Per-User Post Limit
 
 ### jQuery Free MY Notes
+
+TODO
+
+## Like or "Heart" Count for Professors
+
+### Let Users "Like" or "Heart" a Professor (Part 1)
+
+Add a little box with a heart icon and then a number indicating how many likes a professor has received
+
+Set things up so that you need to be logged in with a subscriber count in order to add your like to the count
+
+Implement custom logic so that each user account can only add one like, but they can click the heart button again to toggle or remove their original like
+
+This feature it's a great exercise to learn how to set up your own custom rest API endpoints
+
+- Visual aspect in `single-profesor` file:
+
+```html
+<aside class="two-thirds">
+  <span class="like-box">
+    <i class="fa fa-heart-o" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <span class="like-count">3</span>
+  </span>
+  <?php the_content(); ?>
+</aside>
+```
+
+- Data aspect: Create a new custom post type
+
+  Author of a like post will be the user doing the liking
+
+  First, we'll work in the back-end
+
+  An ACField needed - Liked Professor ID
+
+### Let Users "Like" or "Heart" a Professor (Part 2)
+
+Set up custom rest API endpoints for our two like actions
+
+### Creating custom POST and DELETE endpoints
+
+TODO
+
+### Programmatically Create a Post
+
+TODO
+
+### Enforce Limit of One Like Per User/Teacher Combo
+
+**Goal**: Set things up so that you need to be logged in with a user account in order to create a like. We also need to set up the logic so that each user account can only create one like per professor
+
+### Completing the LikeBox
+
+Feature: Only logged in users can create a like
+
+Feature: One like per professor
+
+### Completing the Likebox
+
+Feature: Update JavaScript so that when you do successfully add a like post, the likebox count and heart update in real time on the fly so that you don't need to manually refresh the page.
+
+Feature: If you click the box again, we will set up the server side to delete or remove a like
+
+### jQuery-free Likebox
+
+TODO
+Have not done that yet
+
+## Going Live: Deploying our WordPress Site
+
+The act of copying or moving or pushing a website up onto the web is commonly referred to as deploying

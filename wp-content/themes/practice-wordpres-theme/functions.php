@@ -1,5 +1,6 @@
 <?php
 
+  require get_theme_file_path('./inc/like-route.php');
   require get_theme_file_path('./inc/search-route.php');
 
   function university_custom_rest() {
@@ -176,5 +177,12 @@
       $data['post_status'] = 'private';
     }
     return $data;
+  }
+
+  add_filter('ai1wm_exclude_content_from_export', 'ignoreCertainFiles');
+
+  function ignoreCertainFiles($exclude_filters) {
+    $exclude_filters[] = 'themes/practice-wordpress/node_modules';
+    return $exclude_filters;
   }
 ?>

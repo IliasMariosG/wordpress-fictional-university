@@ -3103,3 +3103,11 @@ Have not done that yet
 ## Going Live: Deploying our WordPress Site
 
 The act of copying or moving or pushing a website up onto the web is commonly referred to as deploying
+
+## Extra Credit Challenges & Topics
+
+### Make Homepage Slideshow Dynamic
+
+Register post type
+
+Dynamically add title, subtitile, link text, link value and image(pending)

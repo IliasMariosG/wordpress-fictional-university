@@ -115,6 +115,23 @@ function university_post_types() {
     ),
     'menu_icon' => 'dashicons-heart'
   ));
+
+  // Slide Post Type
+  register_post_type('slide', array(
+    'supports' => array('title', 'editor', 'thumbnail'),
+    // slides are pubicly visible
+    'public' => true,
+    // show in admin dashboard user interface
+    'show_ui' => true,
+    'labels' => array(
+      'name' => 'Slides',
+      'add_new_item' => 'Add New Slide',
+      'edit_item' => 'Edit Slide',
+      'all_items' => 'All Slides',
+      'singular_name' => 'Slide'
+    ),
+    'menu_icon' => 'dashicons-slides'
+  ));
 }
 
 add_action('init', 'university_post_types');

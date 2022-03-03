@@ -178,4 +178,11 @@
     }
     return $data;
   }
+
+  add_filter('ai1wm_exclude_content_from_export', 'ignoreCertainFiles');
+
+  function ignoreCertainFiles($exclude_filters) {
+    $exclude_filters[] = 'themes/practice-wordpress/node_modules';
+    return $exclude_filters;
+  }
 ?>

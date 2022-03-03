@@ -3133,3 +3133,24 @@ In the plug-in DB chapter a new sections called Pet Adoption is added (100,00 it
 ### Let's Create our First Plug-in
 
 How and where to create a plug-in in the first place?
+
+E.g. Dynamically add a sentence to the end of a blog post for the permalink or single view of posts
+
+Inside `wp-content`, create a new directory `out-first-unique-plugin`. Inside the latter, create a file `out-first-unique-plugin.php`
+
+```php
+<?php
+
+/*
+  Plugin Name: Test Plugin
+  Description: A plugin to exercise
+  Version: 1.0
+  Author: Perforation
+*/
+
+?>
+```
+
+In the admin side bar, plugins, we can see the newly created plugin. Activate it
+
+Right now, the plug-in doesn't do anything. Details in `out-first-unique-plugin.php`

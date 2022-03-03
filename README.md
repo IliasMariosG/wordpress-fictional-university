@@ -3110,4 +3110,26 @@ The act of copying or moving or pushing a website up onto the web is commonly re
 
 Register post type
 
-Dynamically add title, subtitile, link text, link value and image(pending)
+Dynamically add title, subtitile, link text, link value and image(**pending**)
+
+## Plug-in Development
+
+### Introduction to Plug-in Development
+
+A guided tour of plug-in development. Core building blocks and the most comment features in order to build plug-ins
+
+#### Overview
+
+The first chapter will be about php. This will cover sort of the traditional skeleton or building blocks of creating a new plug in.
+
+The next chapter will be about JavaScript. So it will create a new block type for the WordPress or Gutenberg block editor. Along the way we will learn a little bit about React. But we need to remember that this is a course about WordPress not react, meaning we won't cover React as in-depth and as slow the pace as we would in my course. That's entirely dedicated to react. OK, and then in the final of these three plugin chapters, we'll talk about databases specifically when you're plugging needs to store data. We'll talk about when it makes sense to use the WordPress built in custom post type versus when it makes more sense to use or create your own custom database table
+
+In the first chapter, the plug-ins discussed are word count and word filter
+
+In the second chapter, the plug-ins discussed are two new blocks, quick question and professor callout
+
+In the plug-in DB chapter a new sections called Pet Adoption is added (100,00 items (pet custom post types) need to be stored in the DB). In this chapter will discuss in detail when it makes sense to use custom post types for your plug in data needs and when it makes sense to implement your own custom database table. Also, there is a form to add a name and then it will randomly generate all of the other attributes about the pet and add it too the DB
+
+### Let's Create our First Plug-in
+
+How and where to create a plug-in in the first place?

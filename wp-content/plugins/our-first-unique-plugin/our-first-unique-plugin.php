@@ -52,6 +52,10 @@ class WordCountAndTimePlugin {
     // Character Count
     add_settings_field('wcp_charactercount', 'Character Count', array($this, 'charactercountHTML'), 'word-count-settings-page', 'wcp_first_section');
     register_setting('wordcountplugin', 'wcp_wordcount', array('sanitize_callback' => 'sanitize_text_field', 'default' => '1'));
+
+    // Read Time
+    add_settings_field('wcp_readtime', 'Read Time', array($this, 'readtimeHTML'), 'word-count-settings-page', 'wcp_first_section');
+    register_setting('wordcountplugin', 'wcp_readtime', array('sanitize_callback' => 'sanitize_text_field', 'default' => '1'));
   }
 
   function locationHTML() { ?>
@@ -75,6 +79,11 @@ class WordCountAndTimePlugin {
 
   function charactercountHTML() { ?>
     <input type="checkbox" name="wcp_charactercount" value="1" <?php checked(get_option('wcp_charactercount'), '1'); ?>>
+  <?php
+  }
+
+  function readtimeHTML() { ?>
+    <input type="checkbox" name="wcp_readtime" value="1" <?php checked(get_option('wcp_readtime', '1')); ?>>
   <?php
   }
 }

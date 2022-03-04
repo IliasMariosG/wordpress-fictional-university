@@ -44,6 +44,10 @@ class WordCountAndTimePlugin {
 
     add_settings_field('wcp_headline', 'Headline Text', array($this, 'headlineHTML'), 'word-count-settings-page', 'wcp_first_section');
     register_setting('wordcountplugin', 'wcp_headline', array('sanitize_callback' => 'sanitize_text_field', 'default' => 'Post Statistics'));
+
+    // Word Count
+    add_settings_field('wcp_wordcount', 'Word Count', array($this, 'wordcountHTML'), 'word-count-settings-page', 'wcp_first_section');
+    register_setting('wordcountplugin', 'wcp_wordcount', array('sanitize_callback' => 'sanitize_text_field', 'default' => '1'));
   }
 
   function locationHTML() { ?>
@@ -57,6 +61,11 @@ class WordCountAndTimePlugin {
 
   function headlineHTML() { ?>
     <input type="text" name="wcp_headline" value="<?php echo esc_attr(get_option('wcp_headline')); ?>">
+  <?php
+  }
+
+  function wordcountHTML() { ?>
+    <input type="checkbox" name="wcp_wordcount" value="1" <?php checked(get_option('wcp_wordcount'), '1'); ?>>
   <?php
   }
 }

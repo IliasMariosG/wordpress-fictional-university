@@ -3154,3 +3154,25 @@ Inside `wp-content`, create a new directory `out-first-unique-plugin`. Inside th
 In the admin side bar, plugins, we can see the newly created plugin. Activate it
 
 Right now, the plug-in doesn't do anything. Details in `out-first-unique-plugin.php`
+
+### Adding a Settings Page For Our Plugin
+
+A big part of what plugins do isn't just the feature that they bring to the table, but it's also letting the user adjust settings and preferences. This is where a plug in setting screen or an admin setting screen comes into play
+
+Our very first task is simply to learn how to add a link in the admin settings menu to a new custom page that we are creating
+
+### (...continued) Settings API
+
+Settings From and Settings API
+
+Our real goal here is just to permanently save the user's preferences into the database.
+
+So let's begin by looking at the WordPress database and seeing where it stores settings and option values.
+
+So how do we look at our database?
+
+Well, if you're using the local WP or local by flywheel application, just click on the current site that you're running. Then in this area you'll see a database tab. You can click on that and then just click on this "open adminer" button. Once you click on that, it should open a new tab that looks something like this, and this is the database for your WordPress website.
+
+Over here we see the different tables. The one that I want to draw attention to right now, though, is called options. So let's click onto that options table.
+
+And then instead of just showing the structure for the table, let's click this "select data" link.

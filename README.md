@@ -3176,3 +3176,7 @@ Well, if you're using the local WP or local by flywheel application, just click 
 Over here we see the different tables. The one that I want to draw attention to right now, though, is called options. So let's click onto that options table.
 
 And then instead of just showing the structure for the table, let's click this "select data" link.
+
+### Finishing Settings Form
+
+Display Location value remembers the selected value after reloading the page

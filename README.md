@@ -3180,3 +3180,7 @@ And then instead of just showing the structure for the table, let's click this "
 ### Finishing Settings Form
 
 Display Location value remembers the selected value after reloading the page
+
+### Actually Counting the Words, Characters, Read Time
+
+We only really need to change or filter the content if a) you're on a single blog post screen and b) if the user has any of the three checkboxes checked

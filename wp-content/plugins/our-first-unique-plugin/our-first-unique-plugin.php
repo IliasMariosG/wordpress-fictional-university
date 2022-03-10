@@ -5,6 +5,8 @@
   Description: A plugin to exercise
   Version: 1.0
   Author: Perforation
+  Text Domain: wcptextdomain
+  Domain Path: /languages
 */
 
 class WordCountAndTimePlugin {
@@ -13,10 +15,11 @@ class WordCountAndTimePlugin {
     add_action('admin_menu', array($this, 'pluginSettingsLink'));
     add_action('admin_init', array($this, 'settings'));
     add_filter('the_content', array($this, 'ifWrap'));
+    add_action('init', array($this, 'languages'));
   }
 
   function pluginSettingsLink() {
-    add_options_page('Word Count Settings', 'Word Count', 'manage_options', 'word-count-settings-page', array($this, 'settingsPageHTML'));
+    add_options_page('Word Count Settings', __('Word Count', 'wcptextdomain'), 'manage_options', 'word-count-settings-page', array($this, 'settingsPageHTML'));
   }
   
   function settingsPageHTML() { ?>
@@ -113,7 +116,7 @@ class WordCountAndTimePlugin {
     $wordCount = str_word_count(strip_tags($content));
 
     if (get_option('wcp_wordcount', '1')) {
-      $html .= 'This post has ' . $wordCount . ' words.<br>';
+      $html .= esc_html__('This post has', 'wcptextdomain') . ' ' . $wordCount . ' ' . __('words', 'wcptextdomain') . '.<br>';
     }
 
     if (get_option('wcp_charactercount', '1')) {
@@ -130,6 +133,10 @@ class WordCountAndTimePlugin {
       return $html . $content;
     }
     return $content . $html;
+  }
+
+  function languages() {
+    load_plugin_textdomain('wcptextdomain', false, dirname(plugin_basename(__FILE__)) . '/languages');
   }
 }
 

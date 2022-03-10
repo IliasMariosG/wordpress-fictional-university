@@ -116,7 +116,7 @@ class WordCountAndTimePlugin {
     $wordCount = str_word_count(strip_tags($content));
 
     if (get_option('wcp_wordcount', '1')) {
-      $html .= __('This post has', 'wcptextdomain') . ' ' . $wordCount . ' ' . __('words', 'wcptextdomain') . '.<br>';
+      $html .= esc_html__('This post has', 'wcptextdomain') . ' ' . $wordCount . ' ' . __('words', 'wcptextdomain') . '.<br>';
     }
 
     if (get_option('wcp_charactercount', '1')) {

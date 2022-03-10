@@ -3184,3 +3184,25 @@ Display Location value remembers the selected value after reloading the page
 ### Actually Counting the Words, Characters, Read Time
 
 We only really need to change or filter the content if a) you're on a single blog post screen and b) if the user has any of the three checkboxes checked
+
+### Translations / Localization (for PHP)
+
+admin link under the "Settings" menu that says "Word Count"
+
+create Text Domain, Domain Path to the top of `our-first-unique-plugin.php`
+
+add code to tell WP to load our text domain files -> within the constructor, add action
+
+add Loco Translate plugin -> admin sidebar > Loco Translate > Running Plugins > click on Test Plugin
+
+- create template
+
+- create translation
+  
+  new language
+
+  - language option: choose a language
+
+  - Location option: Choose Author
+
+  - Click Start Translating

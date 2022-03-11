@@ -27,12 +27,19 @@ class OurWordFilterPlugin {
       7. 100 -> appears down at the bottom
     */
     add_menu_page('Words to Filter', 'Word Filter', 'manage_options', 'ourwordfilter', array($this, 'wordFilterPageHTML'), 'dashicons-smiley', 100);
+    add_submenu_page('ourwordfilter', 'Word Filter Options', 'Options', 'manage_options', 'word-filter-options', array($this, 'optionsSubMenuHTML'));
+   
+  }
 
     function wordFilterPageHTML() { ?>
       Hello World
     <?php
     }
-  }
+
+    function optionsSubMenuHTML() { ?>
+      Hello World from Options SubPage
+    <?php
+    }
 }
 
 $ourWordFilterPlugin = new OurWordFilterPlugin();

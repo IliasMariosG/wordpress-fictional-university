@@ -3206,3 +3206,18 @@ add Loco Translate plugin -> admin sidebar > Loco Translate > Running Plugins > 
   - Location option: Choose Author
 
   - Click Start Translating
+
+### Admin Sub-Menu
+
+- a) learn how to have a completely custom settings page with all of our own code, both
+the HTML and the PHP
+
+- b) the other thing that's unique about this plug in is we're actually getting a top level menu, with a sub-menu, in the admin dashboard sidebar
+
+- c) we're actually going to learn how to have our own SVG icon instead of a generic dash icon
+
+The first page of the plugin is not going to be built using the WordPress form generator functions. We will build it ourselves, will also learn how to apply a little bit of CSS if we want to. And perhaps most importantly, we're going to write the PHP that actually handles the submission and processing of this form.
+
+- Create `index.php` and add code
+
+- Activate plugin in the dashboard via 'Plugins'

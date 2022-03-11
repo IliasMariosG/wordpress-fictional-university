@@ -3221,3 +3221,9 @@ The first page of the plugin is not going to be built using the WordPress form g
 - Create `index.php` and add code
 
 - Activate plugin in the dashboard via 'Plugins'
+
+### Custom Admin Menu Icon
+
+Provide custom SVG icon istead of the built-in dashicon
+
+Build out our own HTML page

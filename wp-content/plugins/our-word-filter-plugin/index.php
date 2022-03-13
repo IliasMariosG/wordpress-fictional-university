@@ -46,7 +46,7 @@ class OurWordFilterPlugin {
             <p>Enter a <strong>comma-separated</strong> list of words to filter out</p>
           </label>
           <article class="word-filter__flex-container">
-            <textarea name="plugin-words-to-filter" id="plugin-words-to-filter" placeholder="bad, mean, awful, horrible"></textarea>
+            <textarea name="plugin-words-to-filter" id="plugin-words-to-filter" placeholder="bad, mean, awful, horrible"><?php echo esc_textarea(get_option('plugin_words_to_filter')); ?></textarea>
           </article>
           <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
         </form>

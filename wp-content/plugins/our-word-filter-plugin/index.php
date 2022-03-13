@@ -65,7 +65,7 @@ class OurWordFilterPlugin {
 
     function handleForm() {
       // update options table in the db
-      update_option('plugin_words_to_filter', $_POST['plugin_words_to_filter']); ?>
+      update_option('plugin_words_to_filter', $_POST['plugin-words-to-filter']); ?>
       <div class="updated">
         Your filtered words were saved.
       </div>

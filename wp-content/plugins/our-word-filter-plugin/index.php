@@ -37,14 +37,14 @@ class OurWordFilterPlugin {
     function wordFilterPageHTML() { ?>
       <section class="wrap">
         <h1>Word Filter</h1>
-        <form action="POST">
+        <form method="POST">
           <label for="plugin-words-to-filter">
             <p>Enter a <strong>comma-separated</strong> list of words to filter out</p>
           </label>
           <article class="word-filter__flex-container">
             <textarea name="plugin-words-to-filter" id="plugin-words-to-filter" placeholder="bad, mean, awful, horrible"></textarea>
           </article>
-          <input type="button" name="submit" id="submit" class="button button-primary" value="Save Changes">
+          <input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes">
         </form>
       </section>
     <?php

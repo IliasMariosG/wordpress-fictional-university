@@ -37,7 +37,11 @@ class OurWordFilterPlugin {
     function wordFilterPageHTML() { ?>
       <section class="wrap">
         <h1>Word Filter</h1>
+        <?php
+          if ($_POST['justsubmitted'] == "true") $this->handleForm();
+        ?>
         <form method="POST">
+          <input type="hidden" name="justsubmitted" value="true">
           <label for="plugin-words-to-filter">
             <p>Enter a <strong>comma-separated</strong> list of words to filter out</p>
           </label>
@@ -57,6 +61,15 @@ class OurWordFilterPlugin {
 
     function mainPageAssets() {
       wp_enqueue_style('filterAdminCss', plugin_dir_url(__FILE__) . 'styles.css');
+    }
+
+    function handleForm() {
+      // update options table in the db
+      update_option('plugin_words_to_filter', $_POST['plugin_words_to_filter']); ?>
+      <div class="updated">
+        Your filtered words were saved.
+      </div>
+    <?php
     }
 }
 

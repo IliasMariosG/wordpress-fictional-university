@@ -42,6 +42,7 @@ class OurWordFilterPlugin {
         ?>
         <form method="POST">
           <input type="hidden" name="justsubmitted" value="true">
+          <?php wp_nonce_field('saveFilterWords', 'ourNonce'); ?>
           <label for="plugin-words-to-filter">
             <p>Enter a <strong>comma-separated</strong> list of words to filter out</p>
           </label>
@@ -65,11 +66,21 @@ class OurWordFilterPlugin {
 
     function handleForm() {
       // update options table in the db
-      update_option('plugin_words_to_filter', sanitize_text_field($_POST['plugin-words-to-filter'])); ?>
-      <div class="updated">
-        Your filtered words were saved.
-      </div>
-    <?php
+      if (wp_verify_nonce($_POST['ourNonce'], 'saveFilterWords') AND current_user_can('manage_options')) {
+        update_option('plugin_words_to_filter', sanitize_text_field($_POST['plugin-words-to-filter'])); ?>
+        <div class="updated">
+          Your filtered words were saved.
+        </div>
+      <?php
+      } else { ?>
+        <div class="error">
+          Sorry, you do not have permission to perform that action.
+        </div>
+        <?php
+      }
+      
+      
+    
     }
 }
 

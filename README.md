@@ -3245,3 +3245,11 @@ Multiple Choice Quiz Plugin
 2) Activate plugin: Admin dashboard > Plugins > Activate
 
 3) Register custom block type in `/new-block-type-paying-attention/test.js`
+
+### Introduction to JSX
+
+-
+
+### Block Type Attributes
+
+Add an attribute to a block type

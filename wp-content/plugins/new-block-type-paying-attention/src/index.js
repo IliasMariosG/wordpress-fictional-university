@@ -3,9 +3,19 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   icon: "smiley",
   category: "common",
   edit: function () {
-    return <h3>this is a h3 from JSX.</h3>
+    return (
+      <article>
+        <p>Hello, this is a paragraph.</p>
+        <h4>Hi there</h4>
+      </article>
+    )
   },
   save: function () {
-    return wp.element.createElement("h1", null, "This is the frontend.")
+    return (
+      <>
+        <h3>On the frontend.</h3>
+        <h5>On the frontend.</h5>
+      </>
+    )
   }
 })

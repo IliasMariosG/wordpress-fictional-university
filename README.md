@@ -3227,3 +3227,21 @@ The first page of the plugin is not going to be built using the WordPress form g
 Provide custom SVG icon istead of the built-in dashicon
 
 Build out our own HTML page
+
+### Alternative: Manualy Handling Admin Form Submit
+
+TODO
+
+## Plugin Development: Blocks, Gutenberg & React
+
+Use JS to create new custom block types
+
+### Introduction to JS plugin Development
+
+Multiple Choice Quiz Plugin
+
+1) Register plugin `/new-block-type-paying-attention/index.php`
+
+2) Activate plugin: Admin dashboard > Plugins > Activate
+
+3) Register custom block type in `/new-block-type-paying-attention/test.js`

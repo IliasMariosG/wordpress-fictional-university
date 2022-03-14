@@ -7,6 +7,8 @@
   Author: Perforation
 */
 
+use DeliciousBrains\WPMDB\Container\Dotenv\Loader\Value;
+
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
 
 class OurWordFilterPlugin {
@@ -14,12 +16,25 @@ class OurWordFilterPlugin {
   {
     add_action('admin_menu', array($this, 'ourMenu'));
     if (get_option('plugin_words_to_filter')) add_filter('the_content', array($this, 'filterLogic'));
+    add_action('admin_init', array($this, 'ourSetitngs'));
+  }
+
+  function ourSetitngs() {
+    add_settings_section('replacement-text-section', null, null, 'word-filter-options');
+    register_setting('replacementFields', 'replacementText');
+    add_settings_field('replacement-text', 'Filtered Text', array($this, 'replacementFieldHMTL'), 'word-filter-options', 'replacement-text-section');
+  }
+
+  function replacementFieldHMTL() { ?>
+    <input type="text" name="replacementText" value="<?php echo esc_attr(get_option('replacementText', '***')) ?>" >
+    <p class="description">Leave blank to remove the filtered words.</p>
+  <?php
   }
 
   function filterLogic($content) {
     $badWords = explode(',', get_option('plugin_words_to_filter'));
     $badWordsTrimmed = array_map('trim', $badWords);
-    return str_ireplace($badWordsTrimmed, '****', $content);
+    return str_ireplace($badWordsTrimmed, esc_html(get_option('replacementText', '****')), $content);
   }
 
   function ourMenu() {
@@ -63,7 +78,16 @@ class OurWordFilterPlugin {
     }
 
     function optionsSubMenuHTML() { ?>
-      Hello World from Options SubPage
+      <section class="wrap">
+        <h1>Word Filter Options</h1>
+        <form action="options.php" method="post">
+          <?php 
+            settings_fields('replacementFields');
+            do_settings_sections('word-filter-options');
+            submit_button(); 
+          ?>
+        </form>
+      </section>
     <?php
     }
 

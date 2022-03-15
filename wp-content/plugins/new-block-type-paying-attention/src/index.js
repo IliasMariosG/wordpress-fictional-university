@@ -1,5 +1,5 @@
 import './index.scss'
-import {TextControl} from "@wordpress/components"
+import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon} from "@wordpress/components"
 
 wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   title: "Are You Paying Attention?",
@@ -29,6 +29,22 @@ function EditComponent(props) {
     // whatever the function returns, it's the user interface
     <article className="paying-attention-edit-block">
       <TextControl label="Question:"/>
+      <p>Answers:</p>
+      <Flex>
+        <FlexBlock>
+          <TextControl />
+        </FlexBlock>
+
+        <FlexItem>
+          <Button>
+            <Icon icon="star-empty"></Icon>
+          </Button>
+        </FlexItem>
+
+        <FlexItem>
+          <Button>Delete</Button>
+        </FlexItem>
+      </Flex>
     </article>
   )
 }

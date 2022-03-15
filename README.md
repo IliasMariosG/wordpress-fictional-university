@@ -3263,3 +3263,8 @@ If we change the HMTL structure, save the file `index.js` and see the post, we s
 `This block contains unexpected or invalid content.`
 
 The `deprecated` property comes into play. However, by making changes to the `save` function in the `index.js` file, it does not allow us to see any change on the screen. To do that, we need to actively open the post in the admin edit screen and then resave or update it. In case the number of posts is large, e.g. hundreds or thousands, then this approach is not useful.
+This is where a dynamic block comes into play with the use of `null`
+
+### Output of the Block (Part 2)
+
+We no longer just need to load a JavaScript file with this exact action hook instead of just loading a file, we now want to actually register a block type from within PHP. So we do want to use a different action hook

@@ -3253,3 +3253,13 @@ Multiple Choice Quiz Plugin
 ### Block Type Attributes
 
 Add an attribute to a block type
+
+### Output of the Block (Part 1)
+
+What our blog outputs or saves
+
+If we change the HMTL structure, save the file `index.js` and see the post, we see an error
+
+`This block contains unexpected or invalid content.`
+
+The `deprecated` property comes into play. However, by making changes to the `save` function in the `index.js` file, it does not allow us to see any change on the screen. To do that, we need to actively open the post in the admin edit screen and then resave or update it. In case the number of posts is large, e.g. hundreds or thousands, then this approach is not useful.

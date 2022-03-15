@@ -3,8 +3,8 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   icon: "smiley",
   category: "common",
   attributes: {
-    skyColor: {type: "string", source: "text", selector: ".skyColor"},
-    grassColor: {type: "string", source: "text", selector: ".grassColor"}
+    skyColor: {type: "string"},
+    grassColor: {type: "string"}
   },
   edit: function (props) {
     function updateSkyColor(event) {
@@ -24,7 +24,28 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   },
   save: function (props) {
     return (
-      <p>Today the sky is <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="skyColor">{props.attributes.grassColor}</span>.</p>
+      <h6>Today the sky is absolutely <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="skyColor">{props.attributes.grassColor}</span>.</h6>
     )
-  }
+  },
+  deprecated: [{
+    attributes: {
+      skyColor: {type: "string"},
+      grassColor: {type: "string"}
+    },
+    save: function (props) {
+      return (
+        <h3>Today the sky is <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="skyColor">{props.attributes.grassColor}</span>.</h3>
+      )
+    }
+  },{
+    attributes: {
+      skyColor: {type: "string"},
+      grassColor: {type: "string"}
+    },
+    save: function (props) {
+      return (
+      <p>Today the sky is, <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="skyColor">{props.attributes.grassColor}</span>.</p>
+      )
+    }
+  }]
 })

@@ -3268,3 +3268,7 @@ This is where a dynamic block comes into play with the use of `null`
 ### Output of the Block (Part 2)
 
 We no longer just need to load a JavaScript file with this exact action hook instead of just loading a file, we now want to actually register a block type from within PHP. So we do want to use a different action hook
+
+## Plugin: Multiple Choice Block TYpe
+
+### Starting the Multiple Choice Block Type

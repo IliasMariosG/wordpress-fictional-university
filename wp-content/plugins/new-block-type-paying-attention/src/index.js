@@ -6,7 +6,8 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   icon: "smiley",
   category: "common",
   attributes: {
-    question: {type: "string"}
+    question: {type: "string"},
+    answers: {type: "array", default: ["red", "blue"]}
   },
   edit: EditComponent,
   save: function (props) {
@@ -25,21 +26,29 @@ function EditComponent(props) {
     <article className="paying-attention-edit-block">
       <TextControl label="Question:" value={props.attributes.question} onChange={updateQuestion} style={{fontSize: "20px"}} />
       <p style={{fontSize: "13px", margin: "20px 0 8px 0"}}>Answers:</p>
-      <Flex>
-        <FlexBlock>
-          <TextControl />
-        </FlexBlock>
+      {props.attributes.answers.map( (answer, index) => {
+        return (
+          <Flex>
+            <FlexBlock>
+              <TextControl value={answer} onChange={newValue => {
+                const newAnswers = props.attributes.answers.concat([])
+                newAnswers[index] = newValue
+                props.setAttributes({answers: newAnswers})
+              }}/>
+            </FlexBlock>
 
-        <FlexItem>
-          <Button>
-            <Icon className="mark-as-correct" icon="star-empty"></Icon>
-          </Button>
-        </FlexItem>
+            <FlexItem>
+              <Button>
+                <Icon className="mark-as-correct" icon="star-empty" />
+              </Button>
+            </FlexItem>
 
-        <FlexItem>
-          <Button isLink className="attention-delete">Delete</Button>
-        </FlexItem>
-      </Flex>
+            <FlexItem>
+              <Button isLink className="attention-delete">Delete</Button>
+            </FlexItem>
+          </Flex>
+        )
+      })}
       <Button isPrimary>Add another answer</Button>
     </article>
   )

@@ -28,7 +28,7 @@ function EditComponent(props) {
   return (
     // whatever the function returns, it's the user interface
     <article className="paying-attention-edit-block">
-      <TextControl label="Question:"/>
+      <TextControl label="Question:" style={{fontSize: "20px"}} />
       <p>Answers:</p>
       <Flex>
         <FlexBlock>

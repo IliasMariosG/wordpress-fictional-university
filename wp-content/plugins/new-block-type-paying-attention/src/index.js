@@ -37,12 +37,12 @@ function EditComponent(props) {
 
         <FlexItem>
           <Button>
-            <Icon icon="star-empty"></Icon>
+            <Icon className="mark-as-correct" icon="star-empty"></Icon>
           </Button>
         </FlexItem>
 
         <FlexItem>
-          <Button>Delete</Button>
+          <Button className="attention-delete">Delete</Button>
         </FlexItem>
       </Flex>
     </article>

@@ -8,6 +8,10 @@
     color: #ffd700;
     position: relative;
     top: -3px;
+
+    &:hover {
+      transform: scale(1.25);
+    }
   }
   .attention-delete {
     color: #ff0000;

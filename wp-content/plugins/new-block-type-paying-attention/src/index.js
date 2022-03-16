@@ -21,6 +21,13 @@ function EditComponent(props) {
     props.setAttributes({question: value})
   }
 
+  function deleteAnswer(indexToDelete) {
+    const newAnswers = props.attributes.answers.filter((x, index) => {
+      return index != indexToDelete
+    })
+    props.setAttributes({answers: newAnswers})
+  }
+
   return (
     // whatever the function returns, it's the user interface
     <article className="paying-attention-edit-block">
@@ -44,7 +51,7 @@ function EditComponent(props) {
             </FlexItem>
 
             <FlexItem>
-              <Button isLink className="attention-delete">Delete</Button>
+              <Button isLink className="attention-delete" onClick={() => deleteAnswer(index)}>Delete</Button>
             </FlexItem>
           </Flex>
         )

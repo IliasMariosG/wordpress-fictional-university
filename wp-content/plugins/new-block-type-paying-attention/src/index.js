@@ -45,7 +45,7 @@ function EditComponent(props) {
           <Button className="attention-delete">Delete</Button>
         </FlexItem>
       </Flex>
-      <Button>Add another answer</Button>
+      <Button isPrimary>Add another answer</Button>
     </article>
   )
 }

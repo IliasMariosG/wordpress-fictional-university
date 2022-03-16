@@ -3272,3 +3272,11 @@ We no longer just need to load a JavaScript file with this exact action hook ins
 ## Plugin: Multiple Choice Block TYpe
 
 ### Starting the Multiple Choice Block Type
+
+### Styling the Block
+
+### Event handling & Updating Block Attributes
+
+Store the data that user types into the field
+
+Have the JSX start changing when the user tries to add a second, third, or fourth answer

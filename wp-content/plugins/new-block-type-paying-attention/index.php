@@ -26,6 +26,7 @@ class AreYouPayingAttention {
   }
 
   function theHTML($attributes) {
+    wp_enqueue_script('attentionFrontend', plugin_dir_url(__FILE__) . 'build/payingAttentionPublicView.js', array('wp-element'));
     ob_start(); ?>
     <?php return '<h1>Today the sky is completely ' . $attributes['skyColor']  . ' and the grass is ' . $attributes['grassColor'] . '!</h1>';
     return ob_get_clean();

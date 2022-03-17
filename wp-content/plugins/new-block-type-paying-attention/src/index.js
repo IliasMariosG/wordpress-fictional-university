@@ -1,6 +1,27 @@
 import './index.scss'
 import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon} from "@wordpress/components"
 
+function ourStartFunction() {
+  let lockedUpdateButton = false
+  wp.data.subscribe(function() {
+    const results = wp.data.select("core/block-editor").getBlocks().filter((block) => {
+      return block.name == "ourplugin/are-you-paying-attention" && block.attributes.correctAnswer == undefined
+    })
+
+    if (results.length && lockedUpdateButton == false) {
+      lockedUpdateButton = true
+      wp.data.dispatch("core/editor").lockPostSaving("noanswer")
+    }
+
+    if (!results.length && lockedUpdateButton == true) {
+      lockedUpdateButton = false
+      wp.data.dispatch("core/editor").unlockPostSaving("noanswer")
+    }
+  })
+}
+
+ourStartFunction()
+
 wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   title: "Are You Paying Attention?",
   icon: "smiley",

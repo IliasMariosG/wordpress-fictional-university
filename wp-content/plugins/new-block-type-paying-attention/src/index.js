@@ -1,7 +1,7 @@
 import './index.scss'
 import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon} from "@wordpress/components"
 
-function ourStartFunction() {
+(function() {
   let lockedUpdateButton = false
   wp.data.subscribe(function() {
     const results = wp.data.select("core/block-editor").getBlocks().filter((block) => {
@@ -18,9 +18,7 @@ function ourStartFunction() {
       wp.data.dispatch("core/editor").unlockPostSaving("noanswer")
     }
   })
-}
-
-ourStartFunction()
+})()
 
 wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   title: "Are You Paying Attention?",

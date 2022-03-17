@@ -3290,3 +3290,9 @@ Whenever clicking the "Add another answer button" the new text field is automati
 ### Setting Up the Correct Answer
 
 Add a new feature that points towards the correct index or item in our array
+
+### How to Use React on the Front-end of WordPress
+
+Front-end JS for a Block Type
+
+### Passing Block Data from PHP into JS/React

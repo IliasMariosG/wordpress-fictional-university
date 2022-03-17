@@ -31,7 +31,9 @@ class AreYouPayingAttention {
       wp_enqueue_style('attentionFrontEndStyles', plugin_dir_url(__FILE__) . 'build/payingAttentionPublicView.css');
     }
     ob_start(); ?>
-    <?php return '<h1>Today the sky is completely ' . $attributes['skyColor']  . ' and the grass is ' . $attributes['grassColor'] . '!</h1>';
+    
+    <div class="paying-attention-update-me"></div>
+    <?php
     return ob_get_clean();
   }
 }

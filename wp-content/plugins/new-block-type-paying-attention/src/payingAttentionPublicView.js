@@ -1,3 +1,7 @@
 import './payingAttentionPublicView.scss'
 
-alert("Hello")
+const divsToUpdate = document.querySelectorAll(".paying-attention-update-me")
+
+divsToUpdate.forEach((div) => {
+  div.innerHTML = "Hello"
+})

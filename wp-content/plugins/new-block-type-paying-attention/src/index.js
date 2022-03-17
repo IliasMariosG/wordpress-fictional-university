@@ -26,7 +26,7 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   category: "common",
   attributes: {
     question: {type: "string"},
-    answers: {type: "array", default: ["red", "blue"]},
+    answers: {type: "array", default: [""]},
     correctAnswer: {type: "number", default: undefined}
   },
   edit: EditComponent,

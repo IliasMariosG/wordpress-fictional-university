@@ -3280,3 +3280,13 @@ We no longer just need to load a JavaScript file with this exact action hook ins
 Store the data that user types into the field
 
 Have the JSX start changing when the user tries to add a second, third, or fourth answer
+
+### Focus New Field for Immediate Typing
+
+Whenever clicking the "Add another answer button" the new text field is automatically focused so we can immediately begin typing
+
+- **Not yet implemented**
+
+### Setting Up the Correct Answer
+
+Add a new feature that points towards the correct index or item in our array

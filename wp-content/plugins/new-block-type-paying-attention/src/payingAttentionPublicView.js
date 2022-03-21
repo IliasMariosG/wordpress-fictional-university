@@ -12,6 +12,7 @@ divsToUpdate.forEach((div) => {
 
 function Quiz(props) {
   const [isCorrect, setIsCorrect] = useState(undefined)
+
   useEffect(() => {
     if (isCorrect === false) {
       setTimeout(() => {
@@ -32,7 +33,7 @@ function Quiz(props) {
       <p>{props.question}</p>
       <ul>
         {props.answers.map(function (answerSelectd, index) {
-          return <li onClick={() => handleAnswer(index) }>{answerSelectd}</li>
+          return <li onClick={isCorrect === true ? undefined : () => handleAnswer(index) }>{answerSelectd}</li>
         })}
       </ul>
       <section className={"correct-message" + (isCorrect == true ? " correct-message--visible" : "")}>

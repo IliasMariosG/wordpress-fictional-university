@@ -11,12 +11,19 @@ divsToUpdate.forEach((div) => {
 })
 
 function Quiz(props) {
+  function handleAnswer(index) {
+    if (index == props.correctAnswer) {
+      alert("Congrats")
+    } else {
+      alert("sorry")
+    }
+  }
   return (
     <div className="paying-attention-frontend">
       <p>{props.question}</p>
       <ul>
-        {props.answers.map(function (answerSelectd) {
-          return <li>{answerSelectd}</li>
+        {props.answers.map(function (answerSelectd, index) {
+          return <li onClick={() => handleAnswer(index) }>{answerSelectd}</li>
         })}
       </ul>
     </div>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import './payingAttentionPublicView.scss'
 
@@ -12,6 +12,13 @@ divsToUpdate.forEach((div) => {
 
 function Quiz(props) {
   const [isCorrect, setIsCorrect] = useState(undefined)
+  useEffect(() => {
+    if (isCorrect === false) {
+      setTimeout(() => {
+        setIsCorrect(undefined)
+      }, 2600)
+    }
+  }, [isCorrect])
 
   function handleAnswer(index) {
     if (index == props.correctAnswer) {

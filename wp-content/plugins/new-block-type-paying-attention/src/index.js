@@ -1,5 +1,5 @@
 import './index.scss'
-import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon, PanelBody, PanelRow} from "@wordpress/components"
+import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon, PanelBody, PanelRow, ColorPicker} from "@wordpress/components"
 import {InspectorControls} from "@wordpress/block-editor"
 
 (function() {
@@ -63,7 +63,7 @@ function EditComponent(props) {
       <InspectorControls>
         <PanelBody title="Background Color" initialOpen={true}>
           <PanelRow>
-            Hello
+            <ColorPicker/>
           </PanelRow>
         </PanelBody>
       </InspectorControls>

@@ -60,7 +60,7 @@ function EditComponent(props) {
 
   return (
     // whatever the function returns, it's the user interface
-    <article className="paying-attention-edit-block">
+    <article className="paying-attention-edit-block" style={{backgroundColor: props.attributes.backgroundColor}}>
       <InspectorControls>
         <PanelBody title="Background Color" initialOpen={true}>
           <PanelRow>

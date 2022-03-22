@@ -33,6 +33,15 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
     backgroundColor: {type: "string", default: "#EBEBEB"},
     theAlignment: {type: "string", default: "left"}
   },
+  example: {attributes: {
+    question: "What is my name?",
+    correctAnswer: 3,
+    answers: [
+      "Meowsalot", "Barksalot", "Purssloud", "Brad"
+    ],
+    backgroundColor: "#CFE8F1",
+    theAlignment: "center"
+  }},
   edit: EditComponent,
   save: function (props) {
     // with `null` we remove the responsibility of the output from JS to PHP

@@ -1,6 +1,7 @@
 import './index.scss'
 import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon, PanelBody, PanelRow, ColorPicker} from "@wordpress/components"
 import {InspectorControls} from "@wordpress/block-editor"
+import {ChromePicker} from "react-color"
 
 (function() {
   let lockedUpdateButton = false
@@ -64,7 +65,7 @@ function EditComponent(props) {
       <InspectorControls>
         <PanelBody title="Background Color" initialOpen={true}>
           <PanelRow>
-            <ColorPicker color={props.attributes.backgroundColor} onChangeComplete={(x) => props.setAttributes({backgroundColor: x.hex})} />
+            <ChromePicker color={props.attributes.backgroundColor} onChangeComplete={(x) => props.setAttributes({backgroundColor: x.hex})} disableAlpha={true} />
           </PanelRow>
         </PanelBody>
       </InspectorControls>

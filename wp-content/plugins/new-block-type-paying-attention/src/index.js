@@ -31,7 +31,7 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
     answers: {type: "array", default: [""]},
     correctAnswer: {type: "number", default: undefined},
     backgroundColor: {type: "string", default: "#EBEBEB"},
-    theAlignment: {type: "string", default: "center"}
+    theAlignment: {type: "string", default: "left"}
   },
   edit: EditComponent,
   save: function (props) {

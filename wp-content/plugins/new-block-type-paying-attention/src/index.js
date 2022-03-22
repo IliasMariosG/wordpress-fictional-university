@@ -1,5 +1,6 @@
 import './index.scss'
-import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon} from "@wordpress/components"
+import {TextControl, Flex, FlexBlock, FlexItem, Button, Icon, PanelBody, PanelRow} from "@wordpress/components"
+import {InspectorControls} from "@wordpress/block-editor"
 
 (function() {
   let lockedUpdateButton = false
@@ -59,6 +60,13 @@ function EditComponent(props) {
   return (
     // whatever the function returns, it's the user interface
     <article className="paying-attention-edit-block">
+      <InspectorControls>
+        <PanelBody title="Background Color" initialOpen={true}>
+          <PanelRow>
+            Hello
+          </PanelRow>
+        </PanelBody>
+      </InspectorControls>
       <TextControl label="Question:" value={props.attributes.question} onChange={updateQuestion} style={{fontSize: "20px"}} />
       <p style={{fontSize: "13px", margin: "20px 0 8px 0"}}>Answers:</p>
       {props.attributes.answers.map( (answer, index) => {

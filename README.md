@@ -3296,3 +3296,25 @@ Add a new feature that points towards the correct index or item in our array
 Front-end JS for a Block Type
 
 ### Passing Block Data from PHP into JS/React
+
+### Letting Users Click On (Guess) an Answer
+
+### Attention to Detail
+
+### A Note About Animations / Transitions in React
+
+Note from the instructor:
+
+> In the following lesson you may have noticed that instead of dynamically adding / removing content from JSX / DOM I'm just letting all of the content be present the entire time and using CSS classes to make it visible or invisible.
+>
+> I did this for the sake of simplicity, and because this is a course about WordPress and not React. If you are interested in learning more about React, and would want to write conditional JSX to actually add/remove content from the DOM at the appropriate time (without it appearing or disappearing abruptly in 1 millisecond without an animation/transition) I recommend checking out the popular React community package called React Transition Group.
+>
+> Thanks!
+>
+> Brad
+
+### Let Admin Choose Background Color of Block
+
+Adding custom options to the admin block type
+
+With PanelBody, PanelRow and InspectorControls we can create a right-hand options area

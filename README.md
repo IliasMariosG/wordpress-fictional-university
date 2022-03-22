@@ -3318,3 +3318,11 @@ Note from the instructor:
 Adding custom options to the admin block type
 
 With PanelBody, PanelRow and InspectorControls we can create a right-hand options area
+
+With `react-color` we can integrate a third-party color picker. It's not neccessary, but it's done to show how easy the process is
+
+### Block Text Alignment & Block Preview
+
+Finish the Quiz Block Type
+
+- Choose text alignment

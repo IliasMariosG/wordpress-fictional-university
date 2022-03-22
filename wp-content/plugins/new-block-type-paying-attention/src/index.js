@@ -28,7 +28,8 @@ wp.blocks.registerBlockType("ourplugin/are-you-paying-attention", {
   attributes: {
     question: {type: "string"},
     answers: {type: "array", default: [""]},
-    correctAnswer: {type: "number", default: undefined}
+    correctAnswer: {type: "number", default: undefined},
+    backgroundColor: {type: "string", default: "#EBEBEB"}
   },
   edit: EditComponent,
   save: function (props) {
@@ -63,7 +64,7 @@ function EditComponent(props) {
       <InspectorControls>
         <PanelBody title="Background Color" initialOpen={true}>
           <PanelRow>
-            <ColorPicker/>
+            <ColorPicker color={props.attributes.backgroundColor} onChangeComplete={(x) => props.setAttributes({backgroundColor: x.hex})} />
           </PanelRow>
         </PanelBody>
       </InspectorControls>

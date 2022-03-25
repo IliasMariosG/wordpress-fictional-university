@@ -27,3 +27,6 @@ jobs:
 
       - name: Super-Linter
         uses: github/super-linter@v4.9.1
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          PHP_CONFIG_FILE: php.ini

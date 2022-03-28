@@ -14,7 +14,7 @@
         <div class="professor-callout__photo">
         <div class="professor-callout__text">
           <h5><?php the_title()?></h5>
-          <p><?php the_content()?></p>
+          <p><?php echo wp_trim_words(get_the_content(), 30); ?></p>
         </div>
         </div>
       </div>

@@ -26,7 +26,12 @@ class FeaturedProfessor {
   }
 
   function renderCallback($attributes) {
-    return '<p>We will replace this content soon.</p>';
+    if ($attributes['professorFeaturedID']) {
+      wp_enqueue_style('featuredProfessorStyle');
+      return '<div class="professor-callout">Hello</div>';
+    } else {
+      
+    }
   }
 }
 

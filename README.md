@@ -3359,7 +3359,9 @@ Steps:
 
   Get rid of the hard-coded values and load the list of professors dynamically (`.map`). Also, now the post ID is stored in the database (you can check by going into the database)
 
-<!-- ### Displaying Professor Info -->
+### Displaying Professor Info
+
+Query and display information about the selected professor
 
 <!-- ### Professor Preview in Editor (Part 1)-->
 

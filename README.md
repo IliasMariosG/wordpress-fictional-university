@@ -3342,3 +3342,19 @@ Add drop-down menu with hard-coded values
 Update dropdown menu with `professorFeaturedID`
 
 Let WP remember the user's selected option (currently "1", "2", "3" as fake professors ID)
+
+### Loading a List of Professors
+
+Work with `select` element of the drop-down menu to trade out the hard-coded values with an actual list of all of our professor posts by using JS
+
+<!-- ### Displaying Professor Info -->
+
+<!-- ### Professor Preview in Editor (Part 1)-->
+
+<!-- ### Professor Preview in Editor (Part 2)-->
+
+<!-- ### Control Post Meth with Block Type-->
+
+<!-- ### Add related Posts to Professor Detail Page-->
+
+<!-- ### translations / Localisation (For JavaScript)-->

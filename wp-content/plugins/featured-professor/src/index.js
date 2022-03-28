@@ -1,4 +1,5 @@
 import './index.scss'
+import {useSelect} from '@wordpress/data'
 
 wp.blocks.registerBlockType('ourplugin/featured-professor', {
   title: "Professor Callout",
@@ -15,6 +16,12 @@ wp.blocks.registerBlockType('ourplugin/featured-professor', {
 })
 
 function EditComponent(props) {
+  const allProfessors = useSelect(select => {
+    return select("core").getEntityRecords("postType", "professor", {per_page: -1})
+  })
+
+  if (allProfessors == undefined) return <p>Loading...</p>
+
   return (
     <div className="featured-professor-wrapper">
       <div className="professor-select-container">

@@ -30,7 +30,7 @@ class FeaturedProfessor {
       wp_enqueue_style('featuredProfessorStyle');
       return '<div class="professor-callout">Hello</div>';
     } else {
-      
+      NULL;
     }
   }
 }

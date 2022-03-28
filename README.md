@@ -3385,9 +3385,11 @@ Add full stop and commas when programs are more than one
 
 Show the link to the professor's detail screen
 
-<!-- ### Professor Preview in Editor (Part 1)-->
+### Professor Preview in Editor (Part 1)
 
-<!-- ### Professor Preview in Editor (Part 2)-->
+### Professor Preview in Editor (Part 2)
+
+Load HTML preview for a specific professor we choose on the editor screen
 
 <!-- ### Control Post Meth with Block Type-->
 

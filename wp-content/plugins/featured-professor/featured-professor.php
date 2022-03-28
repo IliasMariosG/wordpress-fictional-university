@@ -15,6 +15,18 @@ class FeaturedProfessor {
   function __construct()
   {
     add_action('init', array($this, 'onInit'));
+    add_action('rest_api_init', [$this, 'professorHTML']);
+  }
+
+  function professorHTML() {
+    register_rest_route('/featuredProfessor/v1', 'getHTML', array(
+      'methods' => WP_REST_Server::READABLE,
+      'callback' => [$this, 'getProfessorHTML']
+    ));
+  }
+
+  function getProfessorHTML($data) {
+    return generateProfessorHTML(($data['professorID']));
   }
 
   function onInit() {

@@ -33,6 +33,8 @@
           <?php
           }
           ?>
+
+          <p><a href="<?php the_permalink(); ?>">Learn more about <?php the_title(); ?></a></p>
         </div>
         </div>
       </div>

@@ -3363,6 +3363,28 @@ Steps:
 
 Query and display information about the selected professor
 
+We're starting from the public front-end output
+
+Steps:
+
+Edit `renderCallback` function
+
+  When user as already selected one of the professors
+
+  When user has just inserted this block type and they have not selected a value yet
+
+(Code Organisation) Separate HTML output from featured-professor.php
+
+Query professor post and show title & content
+
+Add image as a background image (instead of an inline `img` element)
+
+Show the related programme the profesor teaches
+
+Add full stop and commas when programs are more than one
+
+Show the link to the professor's detail screen
+
 <!-- ### Professor Preview in Editor (Part 1)-->
 
 <!-- ### Professor Preview in Editor (Part 2)-->

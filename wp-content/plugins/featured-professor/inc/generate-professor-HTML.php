@@ -14,6 +14,7 @@
         <div class="professor-callout__photo">
         <div class="professor-callout__text">
           <h5><?php the_title()?></h5>
+          <p><?php the_content()?></p>
         </div>
         </div>
       </div>

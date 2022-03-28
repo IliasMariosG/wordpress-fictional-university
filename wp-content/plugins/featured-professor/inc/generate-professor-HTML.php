@@ -23,6 +23,9 @@
               <?php
               foreach ($relatedPrograms as $key => $program) {
                 echo get_the_title($program);
+                if (count($relatedPrograms) > 1) {
+                  echo ', ';
+                }
               }
               // php is aware of the whitespace, that is why we don't put the full-stop just before the closing `p` tag
               ?>.

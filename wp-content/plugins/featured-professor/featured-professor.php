@@ -5,9 +5,11 @@
   Description: Create a drop-down menu with featured professors
   Version: 1.0
   Author: Perforation
-*/
+*/  
 
 if (!defined('ABSPATH')) exit; // Exit if accessed directly
+
+require_once plugin_dir_path(__FILE__) . './inc/generate-professor-HTML.php';
 
 class FeaturedProfessor {
   function __construct()
@@ -28,7 +30,7 @@ class FeaturedProfessor {
   function renderCallback($attributes) {
     if ($attributes['professorFeaturedID']) {
       wp_enqueue_style('featuredProfessorStyle');
-      return '<div class="professor-callout">Hello</div>';
+      return generateProfessorHTML($attributes['professorFeaturedID']);
     } else {
       NULL;
     }

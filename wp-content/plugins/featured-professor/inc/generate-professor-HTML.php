@@ -15,6 +15,20 @@
         <div class="professor-callout__text">
           <h5><?php the_title()?></h5>
           <p><?php echo wp_trim_words(get_the_content(), 30); ?></p>
+
+          <?php
+          $relatedPrograms = get_field('related_programs');
+          if ($relatedPrograms) { ?>
+            <p>(Professor name) teaches:
+              <?php
+              foreach ($relatedPrograms as $key => $program) {
+                echo get_the_title($program);
+              }
+              ?>
+            </p>
+          <?php
+          }
+          ?>
         </div>
         </div>
       </div>

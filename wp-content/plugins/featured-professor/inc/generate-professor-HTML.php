@@ -24,7 +24,8 @@
               foreach ($relatedPrograms as $key => $program) {
                 echo get_the_title($program);
               }
-              ?>
+              // php is aware of the whitespace, that is why we don't put the full-stop just before the closing `p` tag
+              ?>.
             </p>
           <?php
           }

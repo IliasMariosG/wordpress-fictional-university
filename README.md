@@ -3335,17 +3335,29 @@ Create a relationship between two pieces of content
 
 **Steps**:
 
-Set up a featured professor block type
+- Set up a featured professor block type
 
-Add drop-down menu with hard-coded values
+- Add drop-down menu with hard-coded values
 
-Update dropdown menu with `professorFeaturedID`
+- Third step
 
-Let WP remember the user's selected option (currently "1", "2", "3" as fake professors ID)
+  Update dropdown menu with `professorFeaturedID`
+
+  Let WP remember the user's selected option (currently "1", "2", "3" as fake professors ID)
 
 ### Loading a List of Professors
 
 Work with `select` element of the drop-down menu to trade out the hard-coded values with an actual list of all of our professor posts by using JS
+
+Steps:
+
+- Add a text saying "Loading..."
+
+- Second step
+
+  Make use of `useSelect` from `@wordpress/data`
+
+  Get rid of the hard-coded values and load the list of professors dynamically (`.map`). Also, now the post ID is stored in the database (you can check by going into the database)
 
 <!-- ### Displaying Professor Info -->
 

@@ -20,6 +20,7 @@ function EditComponent(props) {
     return select("core").getEntityRecords("postType", "professor", {per_page: -1})
   })
 
+  // It only shows for a split second
   if (allProfessors == undefined) return <p>Loading...</p>
 
   return (
@@ -27,9 +28,13 @@ function EditComponent(props) {
       <div className="professor-select-container">
        <select onChange={e => props.setAttributes({professorFeaturedID: e.target.value})}>
          <option>Select a professor.</option>
-         <option value="1" selected={props.attributes.professorFeaturedID == 1}>1</option>
-         <option value="2" selected={props.attributes.professorFeaturedID == 2}>2</option>
-         <option value="3" selected={props.attributes.professorFeaturedID == 3}>3</option>
+         {allProfessors.map(professor => {
+           return (
+             <option value={professor.id} selected={props.attributes.professorFeaturedID == professor.id}>
+               {professor.title.rendered}
+             </option>
+           )
+         })}
        </select>
       </div>
       <div>

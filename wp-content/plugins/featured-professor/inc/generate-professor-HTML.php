@@ -19,7 +19,7 @@
           <?php
           $relatedPrograms = get_field('related_programs');
           if ($relatedPrograms) { ?>
-            <p>(Professor name) teaches:
+            <p><?php the_title(); ?> teaches:
               <?php
               foreach ($relatedPrograms as $key => $program) {
                 echo get_the_title($program);

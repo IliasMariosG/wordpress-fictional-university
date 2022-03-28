@@ -23,7 +23,7 @@
               <?php
               foreach ($relatedPrograms as $key => $program) {
                 echo get_the_title($program);
-                if (count($relatedPrograms) > 1) {
+                if ($key != array_key_last($relatedPrograms) && count($relatedPrograms) > 1) {
                   echo ', ';
                 }
               }

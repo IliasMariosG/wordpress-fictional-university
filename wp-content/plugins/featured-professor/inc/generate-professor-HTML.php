@@ -19,7 +19,7 @@
           <?php
           $relatedPrograms = get_field('related_programs');
           if ($relatedPrograms) { ?>
-            <p><?php the_title(); ?> teaches:
+            <p><?php echo wp_strip_all_tags(the_title()); ?> teaches:
               <?php
               foreach ($relatedPrograms as $key => $program) {
                 echo get_the_title($program);

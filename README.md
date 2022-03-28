@@ -3332,3 +3332,13 @@ Finish the Quiz Block Type
 Create a relationship between two pieces of content
 
 ### Starting Our Featured Professor
+
+**Steps**:
+
+Set up a featured professor block type
+
+Add drop-down menu with hard-coded values
+
+Update dropdown menu with `professorFeaturedID`
+
+Let WP remember the user's selected option (currently "1", "2", "3" as fake professors ID)

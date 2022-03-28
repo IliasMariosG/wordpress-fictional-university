@@ -3326,3 +3326,9 @@ With `react-color` we can integrate a third-party color picker. It's not neccess
 Finish the Quiz Block Type
 
 - Choose text alignment
+
+## Plugin: Featured Professor
+
+Create a relationship between two pieces of content
+
+### Starting Our Featured Professor

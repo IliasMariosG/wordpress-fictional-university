@@ -3424,3 +3424,39 @@ Use loco translate to create a template for the plug in:
 - Loco Translate > Settings > Scan JavaScript files with extensions: > Set it to "js"
 
 Connect JS and the WP translation as a whole
+
+## Plugin Development: Custom SQL Database Table
+
+How to store our data in the database and code the custom database solution
+
+### Understanding the Pros and Cons of the "Post" Paradigm
+
+Steps:
+
+Activate pet adoption plugin (admin dashboard)
+
+Begin to populate the pet collection with a bit of data
+
+### Creating our Own Custom Table
+
+First, deactivate the custom pet adoption (Custom Post Type) plugin
+
+Create a separate table calles pets:
+
+Steps:
+
+Activate Pet Adoption (New DB Table) plugin
+
+
+<!-- 
+### Querying Our Table
+
+### Building Dynamic Queries (Part 1)
+
+### Quick Note about PHP Arrays
+
+### Building Dynamic Queries (Part 2)
+
+### Create Pet from Front-end
+
+### Delete Pet from Front-end -->

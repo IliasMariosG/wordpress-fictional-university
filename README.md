@@ -3407,4 +3407,20 @@ Register the meta to store the udpates in the database
 
 Display any related posts on the professor detail screen
 
-<!-- ### translations / Localisation (For JavaScript)-->
+### Translations / Localisation (For JavaScript)
+
+In the main `featured-professor` file:
+
+Add text domain, domain path, load the plugin text domain in the `onInit()` function
+
+In the `index.js` file:
+
+Replace the "Select a professor." text inside the `<option>` element
+
+In the admin dashboard:
+
+Use loco translate to create a template for the plug in:
+
+- Loco Translate > Settings > Scan JavaScript files with extensions: > Set it to "js"
+
+Connect JS and the WP translation as a whole

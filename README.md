@@ -3407,8 +3407,11 @@ Register the meta to store the udpates in the database
 
 Display any related posts on the professor detail screen
 
+<<<<<<< HEAD
 ### Translations / Localisation (For JavaScript)
 
+=======
+>>>>>>> 8f947349e33c88106673c85b8592978a4b72ac7c
 In the main `featured-professor` file:
 
 Add text domain, domain path, load the plugin text domain in the `onInit()` function
@@ -3447,7 +3450,7 @@ Steps:
 
 Activate Pet Adoption (New DB Table) plugin
 
-
+Insert new pet into the table
 <!-- 
 ### Querying Our Table
 

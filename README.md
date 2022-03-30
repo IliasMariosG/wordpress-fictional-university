@@ -3403,6 +3403,8 @@ Update the meta
 
 Register the meta to store the udpates in the database
 
-<!-- ### Add related Posts to Professor Detail Page-->
+### Add related Posts to Professor Detail Page
+
+Display any related posts on the professor detail screen
 
 <!-- ### translations / Localisation (For JavaScript)-->

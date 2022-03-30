@@ -3451,9 +3451,12 @@ Steps:
 Activate Pet Adoption (New DB Table) plugin
 
 Insert new pet into the table
-<!-- 
+
 ### Querying Our Table
 
+Inside `template-pets` we use the table data to populate the table in the front-end. We do this by typing the relevant SQL statement
+
+<!-- 
 ### Building Dynamic Queries (Part 1)
 
 ### Quick Note about PHP Arrays

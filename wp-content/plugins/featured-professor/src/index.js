@@ -3,6 +3,9 @@ import {useSelect} from '@wordpress/data'
 import {useState, useEffect} from 'react'
 import apiFetch from '@wordpress/api-fetch'
 
+// __: 18n plugin globally accessible
+const __ = wp.i18n.__
+
 wp.blocks.registerBlockType('ourplugin/featured-professor', {
   title: "Professor Callout",
   description:  "Include a short description and link to a professor of your choice",
@@ -66,7 +69,7 @@ function EditComponent(props) {
     <div className="featured-professor-wrapper">
       <div className="professor-select-container">
        <select onChange={e => props.setAttributes({professorFeaturedID: e.target.value})}>
-         <option>Select a professor.</option>
+         <option>{__("Select a professor.", "featured-professor")}</option>
          {allProfessors.map(professor => {
            return (
              <option value={professor.id} selected={props.attributes.professorFeaturedID == professor.id}>

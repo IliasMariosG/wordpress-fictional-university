@@ -27,7 +27,7 @@ class FeaturedProfessor {
 
   function getProfessorHTML($data) {
     // We look inside $data for any url variable (on the address bar)
-    return generateProfessorHTML(($data['professorID']));
+    return generateProfessorHTML(($data['professorFeaturedID']));
   }
 
   function onInit() {

@@ -22,13 +22,14 @@ function EditComponent(props) {
   useEffect(() => {
     async function go() {
       const response = await apiFetch({
-        path: `featuredProfessor/v1/getHTML?professorid=${props.attributes.professorID}`,
+        path: `/featuredProfessor/v1/getHTML?professorID=${props.attributes.professorFeaturedID}`,
         method: "GET"
       })
       setThePreview(response)
     }
     go()
-  }, [props.attributes.professorID])
+  }, [props.attributes.professorFeaturedID])
+
   const allProfessors = useSelect(select => {
     return select("core").getEntityRecords("postType", "professor", {per_page: -1})
   })

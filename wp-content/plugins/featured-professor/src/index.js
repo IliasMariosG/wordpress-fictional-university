@@ -31,6 +31,13 @@ function EditComponent(props) {
     go()
   }, [props.attributes.professorFeaturedID])
 
+  // delete appropriate item from post_meta when deleting a featured professor on the editor screen
+  useEffect(() => {
+    return () => {
+      updateTheMeta()
+    }
+  }, [])
+
   function updateTheMeta() {
     // select any and all block types on the edit screen
     const professorsForMeta = wp.data.select("core/block-editor").getBlocks()

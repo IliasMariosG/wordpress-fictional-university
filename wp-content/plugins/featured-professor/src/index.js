@@ -20,8 +20,9 @@ wp.blocks.registerBlockType('ourplugin/featured-professor', {
 function EditComponent(props) {
   const [thePreview, setThePreview] = useState("")
   useEffect(() => {
-    updateTheMeta()
-    async function go() {
+    if (props.attributes.professorFeaturedID) {
+      updateTheMeta()
+      async function go() {
       const response = await apiFetch({
         path: `/featuredProfessor/v1/getHTML?professorID=${props.attributes.professorFeaturedID}`,
         method: "GET"
@@ -29,6 +30,7 @@ function EditComponent(props) {
       setThePreview(response)
     }
     go()
+    }
   }, [props.attributes.professorFeaturedID])
 
   // delete appropriate item from post_meta when deleting a featured professor on the editor screen

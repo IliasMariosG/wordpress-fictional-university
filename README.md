@@ -3391,7 +3391,17 @@ Show the link to the professor's detail screen
 
 Load HTML preview for a specific professor we choose on the editor screen
 
-<!-- ### Control Post Meth with Block Type-->
+### Control Post Meth with Block Type
+
+Create a relationship between a blog post any of its featured professors
+
+We're going to create the following record in the database:
+
+A meta_key called featured_professor (`featuredprofessor` in the `index.js` file), a post_id having a value of the blog post that is featuring the professor and the mate_value being the value of the ID of the proffessor
+
+Update the meta
+
+Register the meta to store the udpates in the database
 
 <!-- ### Add related Posts to Professor Detail Page-->
 

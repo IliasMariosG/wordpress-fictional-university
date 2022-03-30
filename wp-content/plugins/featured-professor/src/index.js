@@ -20,6 +20,7 @@ wp.blocks.registerBlockType('ourplugin/featured-professor', {
 function EditComponent(props) {
   const [thePreview, setThePreview] = useState("")
   useEffect(() => {
+    updateTheMeta()
     async function go() {
       const response = await apiFetch({
         path: `/featuredProfessor/v1/getHTML?professorID=${props.attributes.professorFeaturedID}`,
@@ -30,6 +31,21 @@ function EditComponent(props) {
     go()
   }, [props.attributes.professorFeaturedID])
 
+  function updateTheMeta() {
+    // select any and all block types on the edit screen
+    const professorsForMeta = wp.data.select("core/block-editor").getBlocks()
+      // filter through them just for the featured professor block types
+      .filter(x => x.name == "ourplugin/featured-professor")
+      // An array of professors ID numbers is what we are trying to get 
+      .map(x => x.attributes.professorFeaturedID)
+      // filter out instances of the same professor
+      .filter((valueOfItemBeingLooped, currentIndexBeingLooped, array) => {
+        return array.indexOf(valueOfItemBeingLooped) == currentIndexBeingLooped;
+      })
+      console.log(professorsForMeta)
+
+    wp.data.dispatch("core/editor").editPost({meta:{featuredProfessor: professorsForMeta}})
+  }
   const allProfessors = useSelect(select => {
     return select("core").getEntityRecords("postType", "professor", {per_page: -1})
   })

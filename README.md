@@ -3456,9 +3456,13 @@ Insert new pet into the table
 
 Inside `template-pets` we use the table data to populate the table in the front-end. We do this by typing the relevant SQL statement
 
-<!-- 
 ### Building Dynamic Queries (Part 1)
 
+Use url parameters to build out a dynamic query. We also need `prepare()` to do that. Then we want our template to react to this data, e.g. `/pet-adoption/?search=dog` and then only show dogs in the table
+
+First, we write the php way (`_GET['species']`) to access the value the visitor has specified for a search input, e.g.g `?species=dog` or `?species=hamster` etc.
+
+<!-- 
 ### Quick Note about PHP Arrays
 
 ### Building Dynamic Queries (Part 2)

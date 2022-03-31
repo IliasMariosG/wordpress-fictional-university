@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div class="container container--narrow page-section">
 
-  <p>This page took <strong><?php echo timer_stop();?></strong> seconds to prepare. Found <strong><?php echo $getPets->count; ?></strong> results (showing the first <?php  echo count($getPets->pets); ?>).</p>
+  <p>This page took <strong><?php echo timer_stop();?></strong> seconds to prepare. Found <strong><?php echo $getPets->count; ?></strong> results (showing the first <?php echo count($getPets->pets); ?>).</p>
   
   <table class="pet-adoption-table">
     <tr>
@@ -34,7 +34,7 @@ get_header(); ?>
       <tr>
         <td><?php echo $pet->petname; ?></td>
         <td><?php echo $pet->species; ?></td>
-        <td><?php echo $pet->weight; ?></td>
+        <td><?php echo $pet->petweight; ?></td>
         <td><?php echo $pet->birthyear; ?></td>
         <td><?php echo $pet->favhobby; ?></td>
         <td><?php echo $pet->favcolor; ?></td>

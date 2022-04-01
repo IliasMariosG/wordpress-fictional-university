@@ -3466,7 +3466,48 @@ First, we write the php way (`_GET['species']`) to access the value the visitor 
 ### Quick Note about PHP Arrays
 
 ### Building Dynamic Queries (Part 2)
+-->
 
 ### Create Pet from Front-end
 
+Create a pet and delete a pet from our front-end.
+
+Steps:
+
+Add a form where a user with admin capabilities can type in the name for a new pet and then submit the form and it will actually get added to the database (in `template-pets.php`)
+
+- Inside the form we have two `<input>` elements:
+
+  ```html
+  <!-- template-pets.php -->
+
+  <!-- We care about two attributes: -->
+
+  <!-- value="createpet" -->
+  <input type="hidden" name="action" value="createpet">
+  <!-- and name="incomingpetname" -->
+  <input type="text" name="incomingpetname" placeholder="name...">
+  ```
+
+- Also, the user should have admin capabilities:
+
+  ```php
+  <!-- new-database-table.php -->
+
+  <!-- WordPress will actually only run this exact hook if the current user is logged in. It doesn't check to see that they're an administrative user, just that they're logged in with any, even with just a guest or basic editor account -->
+  add_action('admin_post_createpet', array($this, 'createPet'));
+  ```
+
+  The workaround to that, is to add a no privileges portion, `_nopriv_`:
+
+  ```php
+  <!-- new-database-table.php -->
+
+  add_action('admin_post_createpet', array($this, 'createPet'));
+
+  <!-- WordPress will now call the following function if a user isn't logged in at all. -->
+  add_action('admin_post_nopriv__createpet', array($this, 'createPet'));
+  ```
+
+<!--
 ### Delete Pet from Front-end -->

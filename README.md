@@ -3509,5 +3509,6 @@ Add a form where a user with admin capabilities can type in the name for a new p
   add_action('admin_post_nopriv__createpet', array($this, 'createPet'));
   ```
 
-<!--
-### Delete Pet from Front-end -->
+### Delete Pet from Front-end
+
+Follow a similar approach by working in the `template-pets.php` and `new-database-table.php` files

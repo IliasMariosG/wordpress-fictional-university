@@ -34,11 +34,12 @@ class PetAdoptionTablePlugin {
       global $wpdb;
       $wpdb->insert($this->tablename, $generateRandomPet);
       # Redirect user back to the pet-adoption page
-      wp_redirect(site_url('/pet-adoption'));
+      wp_safe_redirect(site_url('/pet-adoption'));
     } else {
       # redirect to homepage
-      wp_redirect(site_url());
+      wp_safe_redirect(site_url());
     }
+    exit;
   }
 
   function deletePet() {
@@ -49,11 +50,12 @@ class PetAdoptionTablePlugin {
       global $wpdb;
       $wpdb->delete($this->tablename, array('id' => $id));
       # Redirect user back to the pet-adoption page
-      wp_redirect(site_url('/pet-adoption'));
+      wp_safe_redirect(site_url('/pet-adoption'));
     } else {
       # redirect to homepage
-      wp_redirect(site_url());
+      wp_safe_redirect(site_url());
     }
+    exit;
   }
 
   function onActivate() {

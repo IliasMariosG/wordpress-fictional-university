@@ -3481,9 +3481,9 @@ Add a form where a user with admin capabilities can type in the name for a new p
   ```html
   <!-- template-pets.php -->
 
-  <!-- We care about two attributes: -->
+  <!-- We care about three attributes: -->
 
-  <!-- value="createpet" -->
+  <!--  name="action", value="createpet" -->
   <input type="hidden" name="action" value="createpet">
   <!-- and name="incomingpetname" -->
   <input type="text" name="incomingpetname" placeholder="name...">

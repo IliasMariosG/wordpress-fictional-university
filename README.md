@@ -21,7 +21,7 @@ Install [Local by Flywheel](https://localwp.com/)
 ### Example
 
 ```php
-$my name = 'Brad';
+$myname = 'Brad';
 <h1> This page is all about <?php echo $myname ?></h1>
 ```
 
@@ -3512,3 +3512,111 @@ Add a form where a user with admin capabilities can type in the name for a new p
 ### Delete Pet from Front-end
 
 Follow a similar approach by working in the `template-pets.php` and `new-database-table.php` files
+
+## Block Themes & Full Site Editing
+
+### 160. What Is Full Site Editing?
+<!-- 10min -->
+
+in the past with the traditional theme, how would you change the homepage content? Maybe you'd have to edit the actual PHP template files, or maybe you created an actual page in WordPress named Home Page and then you could edit the WYSIWYG main body content. But even doing that is not super intuitive for the end user. So when you have a block theme instead of a traditional theme that supports full site editing, watch how easy this is.
+
+You would just go into your dashboard under appearance.
+
+Click Editor.
+
+By default, it's going to pull up the front page or home page template and now you can just start clicking
+
+to edit.
+
+### 161. Creating A Block Theme
+
+
+
+<!--20min
+
+### 162. Where Should We Begin With Block Themes?
+11min
+
+### 163. Custom Banner Block (Part 1)
+5min
+
+### 164. Custom Banner Block (Part 2)
+19min
+
+### 165. Making Our Block Editable
+10min
+
+### 166. Generic Heading Block
+12min
+
+### 167. Finishing Generic Heading Block
+19min
+
+### 168. What Is "theme.json" In A Block Theme? (Part 1)
+3min
+
+### 169. What Is "theme.json" In A Block Theme? (Part 2)
+20min
+
+### 170. How To Disable Most Typography & Color Choices
+1min
+
+### 171. Custom Button Block (Part 1)
+5min
+
+### 172. Custom Button Block (Part 2)
+19min
+
+### 173. Color Picker For Button Block (Part 1)
+11min
+
+### 174. Color Picker For Button Block (Part 2)
+14min
+
+### 175. Quick Note About Link Chooser Popover
+1min
+
+### 176. Our PHP Render Approach
+19min
+
+### 177. User Uploaded Background Images (Part 1)
+10min
+
+### 178. User Uploaded Background Images (Part 2)
+14min
+
+### 179. Quick Details: Banner Block
+9min
+
+### 180. Events And Blogs Area (Part 1)
+6min
+
+### 181. Events And Blogs Area (Part 2)
+15min
+
+### 182. Header & Footer Blocks
+13min
+
+### 183. Slideshow Block (Part 1)
+17min
+
+### 184. Slideshow Block (Part 2)
+11min
+
+### 185. Templates (Part 1)
+9min
+
+### 186. Templates (Part 2)
+12min
+
+### 187. Single Page & Post Templates
+19min
+
+### 188. Remaining Templates
+15min
+
+### 189. Only Allow Certain Block Types In Certain Editor Environments
+8min
+
+### 190. Creating A "Blank" Template For Landing Pages -->
+<!-- 6min -->

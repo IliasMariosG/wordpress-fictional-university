@@ -3530,13 +3530,11 @@ to edit.
 
 ### 161. Creating A Block Theme
 
+### 162. Where Should We Begin With Block Themes?
 
+The goal is to turn a traditional theme into a block theme.
 
 <!--20min
-
-### 162. Where Should We Begin With Block Themes?
-11min
-
 ### 163. Custom Banner Block (Part 1)
 5min
 

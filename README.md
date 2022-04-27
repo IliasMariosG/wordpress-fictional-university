@@ -3534,13 +3534,15 @@ to edit.
 
 The goal is to turn a traditional theme into a block theme.
 
-<!--20min
 ### 163. Custom Banner Block (Part 1)
-5min
+
+Let's start creating our first custom block in our fictional block theme folder.
 
 ### 164. Custom Banner Block (Part 2)
-19min
 
+We will add the banner of the homepage in a static manner
+
+<!--20min
 ### 165. Making Our Block Editable
 10min
 

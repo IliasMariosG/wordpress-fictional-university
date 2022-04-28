@@ -188,15 +188,6 @@
     return $exclude_filters;
   }
 
-  add_action('init', 'bannerBlock');
-
-  function bannerBlock() {
-    wp_register_script('bannerBlockScript', get_stylesheet_directory_uri() . '/build/banner.js', array('wp-blocks', 'wp-editor'));
-    register_block_type('ourblocktheme/banner', array(
-      'editor_script' => 'bannerBlockScript'
-    ));
-  }
-
   class JSXBlock {
     function __construct($blockName)
     {
@@ -205,9 +196,9 @@
     }
 
     function onInit() {
-      wp_register_script('bannerBlockScript', get_stylesheet_directory_uri() . '/build/banner.js', array('wp-blocks', 'wp-editor'));
-      register_block_type('ourblocktheme/banner', array(
-        'editor_script' => 'bannerBlockScript'
+      wp_register_script($this->blockName, get_stylesheet_directory_uri() . "/build/{$this->blockName}.js", array('wp-blocks', 'wp-editor'));
+      register_block_type("ourblocktheme/{$this->blockName}", array(
+        'editor_script' => $this->blockName
       ));
     }
   }

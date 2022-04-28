@@ -196,4 +196,22 @@
       'editor_script' => 'bannerBlockScript'
     ));
   }
+
+  class JSXBlock {
+    function __construct($blockName)
+    {
+      $this->blockName = $blockName;
+      add_action('init', [$this, 'onInit']);
+    }
+
+    function onInit() {
+      wp_register_script('bannerBlockScript', get_stylesheet_directory_uri() . '/build/banner.js', array('wp-blocks', 'wp-editor'));
+      register_block_type('ourblocktheme/banner', array(
+        'editor_script' => 'bannerBlockScript'
+      ));
+    }
+  }
+
+  new JSXBlock('banner');
+  new JSXBlock('genericHeading');
 ?>

@@ -204,5 +204,5 @@
   }
 
   new JSXBlock('banner');
-  new JSXBlock('genericHeading');
+  new JSXBlock('genericheading');
 ?>

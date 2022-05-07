@@ -30,8 +30,21 @@ function EditComponent(props) {
   )
 }
 
-function SaveComponent(params) {
-  return (
-   <div>This is our heading.</div>
-  )
+function SaveComponent(props) {
+  function createTagName() {
+    switch (props.attributes.size) {
+      case "large":
+        return "h1"
+        break;
+        case "medium":
+          return "h2"
+          break;
+          case "small":
+            return "h3"
+            break;
+      default:
+        break;
+    }
+  }
+  return <RichText.Content tagName={createTagName()} value={props.attributes.size} className={`headline headline--${props.attributes.size}`} value={props.attributes.text} />
 }

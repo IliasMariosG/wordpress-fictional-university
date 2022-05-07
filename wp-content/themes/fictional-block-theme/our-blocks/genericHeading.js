@@ -17,7 +17,7 @@ function EditComponent(props) {
 
   return (
     <>
-      <RichText value={props.attributes.text} onChange={handleTextChange} />
+      <RichText allowedFormats={["core/bold"]} tagName="h1" className={`headline headline--${props.attributes.size}`} value={props.attributes.text} onChange={handleTextChange} />
     </>
   )
 }

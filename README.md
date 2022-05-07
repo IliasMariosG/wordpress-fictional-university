@@ -3558,10 +3558,11 @@ In `genericHeading.js`:
 
 We want to keep track of the data that we need; text that we type into the heading and of what size (small, medium, large)
 
-<!--
 ### 168. What Is "theme.json" In A Block Theme? (Part 1)
-3min
 
+Learn about a file named themed JSON, which lets us configure how the editor works
+
+<!--
 ### 169. What Is "theme.json" In A Block Theme? (Part 2)
 20min
 

@@ -1,3 +1,4 @@
+import { link } from "@wordpress/icons"
 import { ToolbarGroup, ToolbarButton } from "@wordpress/components"
 import { RichText, BlockControls } from "@wordpress/block-editor"
 
@@ -16,9 +17,16 @@ function EditComponent(props) {
     props.setAttributes({text: x})
   }
 
+  function buttonHandler() {
+    s
+  }
+
   return (
     <>
       <BlockControls>
+        <ToolbarGroup>
+          <ToolbarButton onClick={buttonHandler} icon={link} />
+        </ToolbarGroup>
         <ToolbarGroup>
           <ToolbarButton isPressed={props.attributes.size === "large"} onClick={() => props.setAttributes({size: "large"})}>Large</ToolbarButton>
           <ToolbarButton isPressed={props.attributes.size === "medium"} onClick={() => props.setAttributes({size: "medium"})}>Medium</ToolbarButton>

@@ -15,6 +15,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.5.2",
     "@svgr/webpack": "^6.2.1",
+    "@wordpress/icons": "^8.4.0",
     "@wordpress/scripts": "*",
     "axios": "^0.21.4",
     "normalize.css": "^8.0.1",

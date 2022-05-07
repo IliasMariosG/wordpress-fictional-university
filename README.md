@@ -3542,16 +3542,23 @@ Let's start creating our first custom block in our fictional block theme folder.
 
 We will add the banner of the homepage in a static manner
 
-<!--20min
+<!--
 ### 165. Making Our Block Editable
 10min
 
 ### 166. Generic Heading Block
 12min
+<!-->
 
 ### 167. Finishing Generic Heading Block
-19min
 
+Currently, it's hardcoded to just say the word "hello". We want to make it so that you can actually click on it and edit it. Also, we're going to set things up so that the hover toolbar has options such as "small", "medium" and "large" that you can use to control the size of the heading.
+
+In `genericHeading.js`:
+
+We want to keep track of the data that we need; text that we type into the heading and of what size (small, medium, large)
+
+<!--
 ### 168. What Is "theme.json" In A Block Theme? (Part 1)
 3min
 

@@ -1,6 +1,7 @@
 import { link } from "@wordpress/icons"
-import { ToolbarGroup, ToolbarButton } from "@wordpress/components"
+import { ToolbarGroup, ToolbarButton , Popover } from "@wordpress/components"
 import { RichText, BlockControls } from "@wordpress/block-editor"
+import { useState } from "@wordpress/element"
 
 wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
   title: "Generic Button",
@@ -13,12 +14,14 @@ wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
 })
 
 function EditComponent(props) {
+  const [isLinkPickerVisible, setIsLinkPickerVisible] = useState(false)
+
   function handleTextChange(x) {
     props.setAttributes({text: x})
   }
 
   function buttonHandler() {
-    s
+    setIsLinkPickerVisible(previousValue => !previousValue)
   }
 
   return (
@@ -34,6 +37,9 @@ function EditComponent(props) {
         </ToolbarGroup>
       </BlockControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />
+      {isLinkPickerVisible && (
+        <Popover>Hello</Popover>
+      )}
     </>
   )
 }

@@ -1,13 +1,14 @@
 import { link } from "@wordpress/icons"
-import { ToolbarGroup, ToolbarButton , Popover } from "@wordpress/components"
-import { RichText, BlockControls } from "@wordpress/block-editor"
+import { ToolbarGroup, ToolbarButton , Popover, Button } from "@wordpress/components"
+import { RichText, BlockControls, __experimentalLinkControl as LinkControl } from "@wordpress/block-editor"
 import { useState } from "@wordpress/element"
 
 wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
   title: "Generic Button",
   attributes: {
     text: {type: "string"},
-    size: {type: "string", default: "large"}
+    size: {type: "string", default: "large"},
+    linkObject: {type: "object"}
   },
   edit: EditComponent,
   save: SaveComponent
@@ -24,6 +25,10 @@ function EditComponent(props) {
     setIsLinkPickerVisible(previousValue => !previousValue)
   }
 
+  function handleLinkChange(newLink) {
+    props.setAttributes({linkObject: newLink})
+  }
+
   return (
     <>
       <BlockControls>
@@ -38,7 +43,10 @@ function EditComponent(props) {
       </BlockControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />
       {isLinkPickerVisible && (
-        <Popover>Hello</Popover>
+        <Popover>
+          <LinkControl settings={[]} value={props.attributes.linkObject} onChange={handleLinkChange} />
+          <Button variant="primary">Confirm Link</Button>
+        </Popover>
       )}
     </>
   )

@@ -43,7 +43,7 @@ function EditComponent(props) {
       </BlockControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />
       {isLinkPickerVisible && (
-        <Popover>
+        <Popover position="middle center">
           <LinkControl settings={[]} value={props.attributes.linkObject} onChange={handleLinkChange} />
           <Button variant="primary" onClick={() => setIsLinkPickerVisible(false)} style={{display: "block", width: "100%"}}>Confirm Link</Button>
         </Popover>

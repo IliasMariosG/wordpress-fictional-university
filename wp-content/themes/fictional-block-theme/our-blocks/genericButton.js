@@ -1,6 +1,6 @@
 import { link } from "@wordpress/icons"
-import { ToolbarGroup, ToolbarButton , Popover, Button } from "@wordpress/components"
-import { RichText, BlockControls, __experimentalLinkControl as LinkControl } from "@wordpress/block-editor"
+import { ToolbarGroup, ToolbarButton , Popover, Button, PanelBody, PanelRow, ColorPalette } from "@wordpress/components"
+import { RichText, BlockControls, __experimentalLinkControl as LinkControl, InspectorControls } from "@wordpress/block-editor"
 import { useState } from "@wordpress/element"
 
 wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
@@ -8,7 +8,8 @@ wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
   attributes: {
     text: {type: "string"},
     size: {type: "string", default: "large"},
-    linkObject: {type: "object"}
+    linkObject: {type: "object", default: {url: ""}},
+    colorName: {type: "string"}
   },
   edit: EditComponent,
   save: SaveComponent
@@ -29,6 +30,15 @@ function EditComponent(props) {
     props.setAttributes({linkObject: newLink})
   }
 
+  const ourColors = [
+    {name: "blue", color: "#0d3b66"},
+    {name: "orange", color: "#ee964b"},
+    {name: "dark-orange", color: "#f95738"}
+  ]
+
+  function handleColorChange(colorCodeValue) {
+    props.setAttributes({colorName: colorCodeValue})
+  }
   return (
     <>
       <BlockControls>
@@ -41,6 +51,12 @@ function EditComponent(props) {
           <ToolbarButton isPressed={props.attributes.size === "small"} onClick={() => props.setAttributes({size: "small"})}>Small</ToolbarButton>
         </ToolbarGroup>
       </BlockControls>
+      <InspectorControls>
+        <PanelBody title="Color" initialOpen={true}>
+          <PanelRow>Color</PanelRow>
+          <ColorPalette colors={ourColors} value={props.attributes.colorName} onChange={handleColorChange}/>
+        </PanelBody>
+      </InspectorControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />
       {isLinkPickerVisible && (
         <Popover position="middle center">

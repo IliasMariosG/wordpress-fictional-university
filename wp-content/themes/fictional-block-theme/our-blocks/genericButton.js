@@ -1,6 +1,6 @@
 import { link } from "@wordpress/icons"
 import { ToolbarGroup, ToolbarButton , Popover, Button, PanelBody, PanelRow, ColorPalette } from "@wordpress/components"
-import { RichText, BlockControls, __experimentalLinkControl as LinkControl, InspectorControls } from "@wordpress/block-editor"
+import { RichText, BlockControls, __experimentalLinkControl as LinkControl, InspectorControls, getColorObjectByColorValue } from "@wordpress/block-editor"
 import { useState } from "@wordpress/element"
 
 wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
@@ -9,7 +9,7 @@ wp.blocks.registerBlockType("ourblocktheme/genericbutton", {
     text: {type: "string"},
     size: {type: "string", default: "large"},
     linkObject: {type: "object", default: {url: ""}},
-    colorName: {type: "string"}
+    colorName: {type: "string", default: "blue"}
   },
   edit: EditComponent,
   save: SaveComponent
@@ -36,8 +36,14 @@ function EditComponent(props) {
     {name: "dark-orange", color: "#f95738"}
   ]
 
+  const currentColorValue = ourColors.filter(color => {
+    return color.name == props.attributes.colorName
+  })[0].color
+
   function handleColorChange(colorCodeValue) {
-    props.setAttributes({colorName: colorCodeValue})
+    // from the hex value that the color palette gives us, we need to find its color name
+    const { name } = getColorObjectByColorValue(ourColors, colorCodeValue)
+    props.setAttributes({colorName: name})  
   }
   return (
     <>
@@ -54,7 +60,7 @@ function EditComponent(props) {
       <InspectorControls>
         <PanelBody title="Color" initialOpen={true}>
           <PanelRow>Color</PanelRow>
-          <ColorPalette colors={ourColors} value={props.attributes.colorName} onChange={handleColorChange}/>
+          <ColorPalette colors={ourColors} value={currentColorValue} onChange={handleColorChange}/>
         </PanelBody>
       </InspectorControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />

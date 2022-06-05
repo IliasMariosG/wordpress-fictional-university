@@ -63,7 +63,7 @@ function EditComponent(props) {
           <ColorPalette colors={ourColors} value={currentColorValue} onChange={handleColorChange}/>
         </PanelBody>
       </InspectorControls>
-      <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text} onChange={handleTextChange} />
+      <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--${props.attributes.colorName}`} value={props.attributes.text} onChange={handleTextChange} />
       {isLinkPickerVisible && (
         <Popover position="middle center">
           <LinkControl settings={[]} value={props.attributes.linkObject} onChange={handleLinkChange} />
@@ -76,7 +76,7 @@ function EditComponent(props) {
 
 function SaveComponent(props) {
   return (
-    <a href={props.attributes.linkObject.url} className={`btn btn--${props.attributes.size} btn--blue`}>
+    <a href={props.attributes.linkObject.url} className={`btn btn--${props.attributes.size} btn--${props.attributes.colorName}`}>
       {props.attributes.text}
     </a>
   )

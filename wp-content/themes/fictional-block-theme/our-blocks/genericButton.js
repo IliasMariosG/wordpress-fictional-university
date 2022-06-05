@@ -54,7 +54,7 @@ function EditComponent(props) {
 
 function SaveComponent(props) {
   return (
-    <a href="#" value={props.attributes.size} className={`btn btn--${props.attributes.size} btn--blue`} value={props.attributes.text}>
+    <a href={props.attributes.linkObject.url} className={`btn btn--${props.attributes.size} btn--blue`}>
       {props.attributes.text}
     </a>
   )

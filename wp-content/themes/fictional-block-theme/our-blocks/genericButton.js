@@ -60,7 +60,7 @@ function EditComponent(props) {
       <InspectorControls>
         <PanelBody title="Color" initialOpen={true}>
           <PanelRow>Color</PanelRow>
-          <ColorPalette colors={ourColors} value={currentColorValue} onChange={handleColorChange}/>
+          <ColorPalette disableCustomColors={true} clearable={false} colors={ourColors} value={currentColorValue} onChange={handleColorChange}/>
         </PanelBody>
       </InspectorControls>
       <RichText allowedFormats={[]} tagName="a" className={`btn btn--${props.attributes.size} btn--${props.attributes.colorName}`} value={props.attributes.text} onChange={handleTextChange} />

@@ -46,5 +46,5 @@ function SaveComponent(props) {
         break;
     }
   }
-  return <RichText.Content tagName={createTagName()} value={props.attributes.size} className={`headline headline--${props.attributes.size}`} value={props.attributes.text} />
+  return <RichText.Content tagName={createTagName()} value={props.attributes.text} className={`headline headline--${props.attributes.size}`} />
 }

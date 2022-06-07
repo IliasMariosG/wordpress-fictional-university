@@ -189,9 +189,10 @@
   }
 
   class JSXBlock {
-    function __construct($blockName, $renderCallback = null)
+    function __construct($blockName, $renderCallback = null, $data = null)
     {
       $this->blockName = $blockName;
+      $this->data = $data;
       $this->renderCallback = $renderCallback;
       add_action('init', [$this, 'onInit']);
     }
@@ -204,6 +205,9 @@
     
     function onInit() {
       wp_register_script($this->blockName, get_stylesheet_directory_uri() . "/build/{$this->blockName}.js", array('wp-blocks', 'wp-editor'));
+      if ($this->data) {
+        wp_localize_script($this->blockName, $this->blockName, $this->data);
+      }
       $ourArgs = array(
         'editor_script' => $this->blockName
       );
@@ -216,7 +220,7 @@
   }
 
   // true means that I want to use a PHP render callback
-  new JSXBlock('banner', true);
+  new JSXBlock('banner', true, ['fallbackimage' => get_theme_file_uri('/images/library-hero.jpg')]);
   new JSXBlock('genericheading');
   new JSXBlock('genericbutton');
 ?>

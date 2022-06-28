@@ -1,7 +1,7 @@
 import { apiFetch } from '@wordpress/api-fetch'
 import { InnerBlocks, InspectorControls, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
 import { Button, PanelBody, PanelRow } from '@wordpress/components'
-import { useEffect } from '@wordpress/elements'
+import { useEffect } from '@wordpress/element'
 
 wp.blocks.registerBlockType("ourblocktheme/banner", {
   title: "Banner",
@@ -18,18 +18,21 @@ wp.blocks.registerBlockType("ourblocktheme/banner", {
 })
 
 function EditComponent(props) {
-  useEffect(function() {
-    if (props.attributes.imageID) {
-      async function go() {
-        const response = await apiFetch({
-          path: `/wp/v2/media/${props.attributes.imageID}`,
-          method: 'GET'
-        })
-        props.setAttributes({imageURL: response.media_details.sizes.pageBanner.source_url})
+  useEffect(
+    function() {
+      if (!props.attributes.imageID) {
+        async function go() {
+          const response = await apiFetch({
+            path: `/wp/v2/media/${props.attributes.imageID}`,
+            method: "GET"
+          })
+          props.setAttributes({imageURL: response.media_details.sizes.pageBanner.source_url})
+        }
+        go()
       }
-      go()
-    }
-  }, [props.attributes.imageID])
+    },
+    [props.attributes.imageID]
+  )
 
   function onFileSelect(x) {
     props.setAttributes({imageID: x.ID})

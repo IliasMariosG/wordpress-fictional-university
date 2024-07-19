@@ -188,6 +188,32 @@
     return $exclude_filters;
   }
 
+  class PlaceholderBlock {
+    function __construct($blockName)
+    {
+      $this->blockName = $blockName;
+      
+      add_action('init', [$this, 'onInit']);
+    }
+
+    function ourRenderCallback($attributes, $content) {
+      ob_start();
+      require get_theme_file_path("/our-blocks/{$this->blockName}.php");
+      return ob_get_clean();
+    }
+    
+    function onInit() {
+      wp_register_script($this->blockName, get_stylesheet_directory_uri() . "/our-blocks/{$this->blockName}.js", array('wp-blocks', 'wp-editor'));
+
+      register_block_type("ourblocktheme/{$this->blockName}", array(
+        'editor_script' => $this->blockName,
+        'render_callback' => [$this, 'ourRenderCallback']
+      ));
+    }
+  }
+
+  new PlaceholderBlock('eventsandblogs');
+
   class JSXBlock {
     function __construct($blockName, $renderCallback = null, $data = null)
     {

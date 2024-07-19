@@ -3,15 +3,7 @@
 name: Linter
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+on: [push, pull_request]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -23,10 +15,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all history so that Super-Linter can switch branches
+          
       - name: Super-Linter
         uses: github/super-linter@v4.9.1
         env:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_PHP: true
+          DEFAULT_BRANCH: main  # Explicitly set the default branch to 'main'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

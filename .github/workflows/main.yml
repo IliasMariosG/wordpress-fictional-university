@@ -16,7 +16,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-
+        with:
+          fetch-depth: 0  # Fetch all history so that Super-Linter can switch branches
+          
       - name: Super-Linter
         uses: github/super-linter@v4.9.1
         env:

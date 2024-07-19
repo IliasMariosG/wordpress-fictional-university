@@ -24,4 +24,5 @@ jobs:
         env:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_PHP: true
+          DEFAULT_BRANCH: main  # Explicitly set the default branch to 'main'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
